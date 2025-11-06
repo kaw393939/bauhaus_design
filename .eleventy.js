@@ -130,8 +130,12 @@ export default async function (eleventyConfig) {
 
   // Custom filter for GitHub Pages path prefix
   eleventyConfig.addFilter('baseUrl', function (url) {
-    const pathPrefix = process.env.PATH_PREFIX || '';
-    return pathPrefix ? `${pathPrefix}${url}` : url;
+    // For GitHub Pages: /bauhaus_design
+    const pathPrefix = process.env.PATH_PREFIX || '/bauhaus_design';
+    if (!url) return pathPrefix;
+    // Ensure url starts with /
+    const cleanUrl = url.startsWith('/') ? url : `/${url}`;
+    return pathPrefix ? `${pathPrefix}${cleanUrl}` : cleanUrl;
   });
 
   // Reading time estimate
@@ -170,6 +174,9 @@ export default async function (eleventyConfig) {
     markdownTemplateEngine: 'njk',
     htmlTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
+    
+    // Path prefix for GitHub Pages
+    pathPrefix: process.env.PATH_PREFIX || '/bauhaus_design/',
     
     // Server configuration
     serverOptions: {

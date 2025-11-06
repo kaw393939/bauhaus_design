@@ -2,10 +2,10 @@
 
 > A modern portfolio website showcasing Bauhaus design principles through contemporary web development.
 
-[![Deploy Status](https://img.shields.io/github/deployments/username/bauhaus/github-pages?label=deployment)](https://github.com/username/bauhaus/deployments)
+[![Deploy Status](https://img.shields.io/github/deployments/kaw393939/bauhaus_design/github-pages?label=deployment)](https://github.com/kaw393939/bauhaus_design/deployments)
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
 
-[Live Demo](https://username.github.io/bauhaus/) | [Documentation](#documentation)
+🌐 **[Live Site](https://kaw393939.github.io/bauhaus_design/)** | [Documentation](#documentation)
 
 ## 🎨 Overview
 

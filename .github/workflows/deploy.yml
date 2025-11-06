@@ -35,10 +35,11 @@ jobs:
           node-version: '20'
           cache: 'npm'
       
-      - name: Configure custom domain
+      - name: Configure for GitHub Pages
         run: |
-          echo "Configuring for custom domain: eaikw.com"
+          echo "Configuring for GitHub Pages deployment"
           echo "Repository: ${{ github.repository }}"
+          echo "Path prefix: /bauhaus_design"
       
       - name: Install dependencies
         run: npm ci
@@ -46,8 +47,8 @@ jobs:
       - name: Build site
         run: npm run build
         env:
-          # Custom domain - no path prefix needed
-          PATH_PREFIX: ''
+          # GitHub Pages path prefix
+          PATH_PREFIX: '/bauhaus_design'
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
