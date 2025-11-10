@@ -46,7 +46,10 @@
 }
 
 .footer-text {
-  font-size: var(--font-size-sm);
+  /* Fortune 100 Typography: Caption styling for footer */
+  font-family: var(--font-body);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
   color: var(--color-aluminum);
 }
 
@@ -89,13 +92,16 @@
 }
 
 .footer-bottom p {
-  font-size: var(--font-size-sm);
+  /* Fortune 100 Typography: Caption for footer copyright */
+  font-family: var(--font-body);
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
   color: var(--color-steel);
   margin: 0;
 }
 
 /* Responsive footer */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .site-footer {
     padding: var(--spacing-lg) 0 var(--spacing-sm);  /* Reduced from 2xl/lg to lg/sm (24px/8px) */
     margin-top: var(--spacing-xl);  /* Reduced from 3xl (64px) to xl (32px) */

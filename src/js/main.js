@@ -11,7 +11,6 @@
   // Get stored theme or default to light
   const storedTheme = localStorage.getItem('theme') || 'light';
   htmlElement.setAttribute('data-theme', storedTheme);
-  updateThemeIcons(storedTheme);
 
   // Theme toggle function
   function toggleTheme() {
@@ -20,7 +19,6 @@
     
     htmlElement.setAttribute('data-theme', newTheme);
     localStorage.setItem('theme', newTheme);
-    updateThemeIcons(newTheme);
     
     // Announce theme change to screen readers
     announceThemeChange(newTheme);
@@ -29,13 +27,6 @@
   // Add event listeners to both toggles
   mobileThemeToggle?.addEventListener('click', toggleTheme);
   desktopThemeToggle?.addEventListener('click', toggleTheme);
-
-  function updateThemeIcons(theme) {
-    const icons = document.querySelectorAll('.theme-icon');
-    icons.forEach(icon => {
-      icon.textContent = theme === 'light' ? '☀' : '🌙';
-    });
-  }
 
   function announceThemeChange(theme) {
     const announcement = document.createElement('div');
@@ -316,6 +307,70 @@ function isInViewport(element) {
     rect.right <= (window.innerWidth || document.documentElement.clientWidth)
   );
 }
+
+// ========================================
+// READING PROGRESS INDICATOR
+// Museum-quality article progress tracking
+// ========================================
+(function initReadingProgress() {
+  const progressBar = document.querySelector('.reading-progress');
+  const progressBarFill = document.querySelector('.reading-progress-bar');
+  const postContent = document.querySelector('.post-content');
+  
+  if (!progressBar || !progressBarFill || !postContent) {
+    return;
+  }
+
+  function updateProgress() {
+    const contentRect = postContent.getBoundingClientRect();
+    const contentTop = contentRect.top + window.pageYOffset;
+    const contentHeight = contentRect.height;
+    const windowHeight = window.innerHeight;
+    const scrolled = window.pageYOffset;
+    
+    // Calculate progress
+    const progressStart = contentTop;
+    const progressEnd = contentTop + contentHeight - windowHeight;
+    const progress = Math.max(0, Math.min(100, ((scrolled - progressStart) / (progressEnd - progressStart)) * 100));
+    
+    // Update progress bar
+    progressBarFill.style.width = `${progress}%`;
+    
+    // Show/hide progress bar
+    if (scrolled > contentTop - 100) {
+      progressBar.classList.add('visible');
+    } else {
+      progressBar.classList.remove('visible');
+    }
+  }
+  
+  // Update on scroll
+  window.addEventListener('scroll', debounce(updateProgress, 10));
+  
+  // Initial update
+  updateProgress();
+})();
+
+// ========================================
+// CALCULATE READING TIME
+// Estimates reading time based on word count
+// ========================================
+(function initReadingTime() {
+  const readingTimeElements = document.querySelectorAll('[data-reading-time]');
+  const wordsPerMinute = 200; // Average reading speed
+  
+  readingTimeElements.forEach(element => {
+    const content = element.textContent || '';
+    const wordCount = content.trim().split(/\s+/).length;
+    const readingTime = Math.ceil(wordCount / wordsPerMinute);
+    
+    // Find the display element
+    const displayElement = document.querySelector('.post-reading-time');
+    if (displayElement) {
+      displayElement.textContent = `${readingTime} min read`;
+    }
+  });
+})();
 
 // ========================================
 // CONSOLE MESSAGE

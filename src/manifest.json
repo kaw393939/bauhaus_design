@@ -1,0 +1,27 @@
+{
+  "name": "Bauhaus Portfolio - Kevin Williams",
+  "short_name": "Bauhaus Portfolio",
+  "description": "Modern portfolio showcasing Bauhaus design principles - form follows function",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#fafafa",
+  "theme_color": "#dc2626",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/images/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/images/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["design", "portfolio", "education"],
+  "lang": "en-US",
+  "dir": "ltr"
+}

@@ -1,7 +1,7 @@
 ---
 layout: base.njk
 title: Home
-description: A modern portfolio showcasing projects and writings with Bauhaus design principles
+description: Experience the Bauhaus movement through digital design - a museum-grade exhibition of geometric modernism, functional aesthetics, and revolutionary design philosophy
 ---
 
 <!-- Hero Section -->
@@ -16,20 +16,20 @@ description: A modern portfolio showcasing projects and writings with Bauhaus de
             </div>
             
             <h1 class="hero-title">
-                {{ site.title }}
+                Bauhaus Revival
             </h1>
             
             <p class="hero-subtitle">
-                Form follows function. A portfolio where design meets purpose.
+                Form follows function. Where geometric purity meets digital innovation.
             </p>
             
             <div class="hero-cta">
                 <a href="{{ '/projects/' | baseUrl }}" class="btn btn--primary">
-                    View Projects
+                    Explore the Movement
                     <span aria-hidden="true">→</span>
                 </a>
                 <a href="{{ '/about/' | baseUrl }}" class="btn btn--outline">
-                    About Me
+                    Design Philosophy
                 </a>
             </div>
         </div>
@@ -40,9 +40,9 @@ description: A modern portfolio showcasing projects and writings with Bauhaus de
 <section class="featured-projects section">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Featured Projects</h2>
+            <h2 class="section-title">Core Principles</h2>
             <p class="section-subtitle">
-                Selected work demonstrating design and development
+                The foundational concepts that defined modernist design
             </p>
         </div>
         
@@ -50,7 +50,7 @@ description: A modern portfolio showcasing projects and writings with Bauhaus de
             {% set featuredProjects = collections.projects | filter('featured') | limit(3) %}
             {% if featuredProjects.length > 0 %}
                 {% for project in featuredProjects %}
-                <article class="card project-card">
+                <article class="card project-card card-geometric">
                     {% if project.data.image %}
                     <div class="card-image">
                         <img src="{{ project.data.image | baseUrl }}" 
@@ -81,7 +81,7 @@ description: A modern portfolio showcasing projects and writings with Bauhaus de
                         {% endif %}
                         
                         {% if project.data.status %}
-                        <span class="project-status project-status--{{ project.data.status }}">
+                        <span class="project-status status-{{ project.data.status }}">
                             {{ project.data.status }}
                         </span>
                         {% endif %}
@@ -89,25 +89,49 @@ description: A modern portfolio showcasing projects and writings with Bauhaus de
                     
                     <div class="card-footer">
                         <a href="{{ project.url | baseUrl }}" class="card-link">
-                            View Project <span aria-hidden="true">→</span>
+                            Explore Principle <span aria-hidden="true">→</span>
                         </a>
                     </div>
                 </article>
                 {% endfor %}
             {% else %}
-                <!-- Placeholder when no projects exist yet -->
-                <div class="card project-card">
+                <!-- Placeholder content -->
+                <article class="card project-card card-geometric">
                     <div class="card-content">
-                        <h3 class="card-title">Coming Soon</h3>
-                        <p class="card-description">Featured projects will be showcased here.</p>
+                        <h3 class="card-title">Form Follows Function</h3>
+                        <p class="card-description">Design must serve purpose above all else. Every element justified by its utility.</p>
+                        <div class="card-tags">
+                            <span class="tag">1919-1933</span>
+                            <span class="tag">Weimar</span>
+                        </div>
                     </div>
-                </div>
+                </article>
+                <article class="card project-card card-geometric">
+                    <div class="card-content">
+                        <h3 class="card-title">Geometric Abstraction</h3>
+                        <p class="card-description">Primary shapes as universal language. Circle, square, triangle define spatial harmony.</p>
+                        <div class="card-tags">
+                            <span class="tag">Modernism</span>
+                            <span class="tag">Gropius</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card project-card card-geometric">
+                    <div class="card-content">
+                        <h3 class="card-title">Unity of Arts</h3>
+                        <p class="card-description">Dissolving barriers between fine art, craft, and industrial design.</p>
+                        <div class="card-tags">
+                            <span class="tag">Dessau</span>
+                            <span class="tag">Revolution</span>
+                        </div>
+                    </div>
+                </article>
             {% endif %}
         </div>
         
         <div class="section-footer">
             <a href="{{ '/projects/' | baseUrl }}" class="btn btn--secondary">
-                View All Projects
+                View All Principles
                 <span aria-hidden="true">→</span>
             </a>
         </div>
@@ -118,9 +142,9 @@ description: A modern portfolio showcasing projects and writings with Bauhaus de
 <section class="recent-posts section section--alt">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Recent Writing</h2>
+            <h2 class="section-title">Historical Context</h2>
             <p class="section-subtitle">
-                Thoughts on design, development, and creativity
+                Understanding the movement that transformed modern design
             </p>
         </div>
         
@@ -131,7 +155,7 @@ description: A modern portfolio showcasing projects and writings with Bauhaus de
                 <article class="card post-card">
                     <div class="card-content">
                         {% if post.data.date %}
-                        <time class="card-date" datetime="{{ post.data.date | dateFormat('YYYY-MM-DD') }}">
+                        <time class="card-date post-date" datetime="{{ post.data.date | dateFormat('YYYY-MM-DD') }}">
                             {{ post.data.date | dateFormat('MMMM D, YYYY') }}
                         </time>
                         {% endif %}
@@ -168,19 +192,46 @@ description: A modern portfolio showcasing projects and writings with Bauhaus de
                 </article>
                 {% endfor %}
             {% else %}
-                <!-- Placeholder when no blog posts exist yet -->
-                <div class="card post-card">
+                <!-- Placeholder exhibition content -->
+                <article class="card post-card">
                     <div class="card-content">
-                        <h3 class="card-title">Coming Soon</h3>
-                        <p class="card-description">Blog posts will appear here soon.</p>
+                        <time class="card-date post-date">1919-1933</time>
+                        <h3 class="card-title">The Weimar Years</h3>
+                        <p class="card-description">Founded by Walter Gropius in Weimar, Germany, the Bauhaus revolutionized art education by uniting fine arts and craft.</p>
+                        <div class="card-tags">
+                            <span class="tag">Origins</span>
+                            <span class="tag">Gropius</span>
+                        </div>
                     </div>
-                </div>
+                </article>
+                <article class="card post-card">
+                    <div class="card-content">
+                        <time class="card-date post-date">1925-1932</time>
+                        <h3 class="card-title">Dessau & Industrial Design</h3>
+                        <p class="card-description">The move to Dessau marked the school's most productive period, producing iconic furniture and typography.</p>
+                        <div class="card-tags">
+                            <span class="tag">Moholy-Nagy</span>
+                            <span class="tag">Albers</span>
+                        </div>
+                    </div>
+                </article>
+                <article class="card post-card">
+                    <div class="card-content">
+                        <time class="card-date post-date">1933-Present</time>
+                        <h3 class="card-title">Legacy & Influence</h3>
+                        <p class="card-description">Though closed by the Nazi regime, Bauhaus principles spread globally, shaping modernism for generations.</p>
+                        <div class="card-tags">
+                            <span class="tag">International Style</span>
+                            <span class="tag">Modernism</span>
+                        </div>
+                    </div>
+                </article>
             {% endif %}
         </div>
         
         <div class="section-footer">
             <a href="{{ '/blog/' | baseUrl }}" class="btn btn--secondary">
-                View All Posts
+                View All Articles
                 <span aria-hidden="true">→</span>
             </a>
         </div>
@@ -188,24 +239,17 @@ description: A modern portfolio showcasing projects and writings with Bauhaus de
 </section>
 
 <!-- Call to Action Section -->
-<section class="cta section">
+<section class="cta-section section">
     <div class="container">
         <div class="cta-content">
-            <div class="geometric-frame" aria-hidden="true">
-                <div class="frame-corner frame-corner--tl"></div>
-                <div class="frame-corner frame-corner--tr"></div>
-                <div class="frame-corner frame-corner--bl"></div>
-                <div class="frame-corner frame-corner--br"></div>
-            </div>
-            
-            <h2 class="cta-title">Let's Work Together</h2>
+            <h2 class="cta-title">Experience Bauhaus Today</h2>
             <p class="cta-text">
-                Interested in collaborating? Get in touch to discuss your next project.
+                Discover how these revolutionary principles continue to shape contemporary design and digital experiences.
             </p>
             
             <div class="cta-actions">
                 <a href="{{ '/contact/' | baseUrl }}" class="btn btn--accent btn--lg">
-                    Get in Touch
+                    Explore the Exhibition
                     <span aria-hidden="true">→</span>
                 </a>
             </div>

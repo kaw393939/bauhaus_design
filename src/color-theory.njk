@@ -1,0 +1,226 @@
+---
+layout: base.njk
+title: Color Theory Explorer
+description: Interactive exploration of Kandinsky's color-form associations - a cornerstone of Bauhaus pedagogical method
+permalink: /color-theory/
+eleventyNavigation:
+  key: Color Theory
+  order: 5
+---
+
+<!-- Page Header -->
+<section class="page-header">
+    <div class="container">
+        <h1 class="page-title">Kandinsky's Color Theory</h1>
+        <p class="page-description">
+            Wassily Kandinsky, master form teacher at the Bauhaus (1922-1933), developed a revolutionary theory connecting geometric forms to primary colors. Experience this fundamental principle through interactive exploration.
+        </p>
+    </div>
+</section>
+
+<!-- Color Theory Explorer Component -->
+<section class="color-theory-explorer">
+    <div class="color-theory-container">
+        <div class="color-theory-header">
+            <h2 class="color-theory-title">Interactive Color-Form Association</h2>
+            <p class="color-theory-subtitle">
+                Drag each color to its corresponding form based on Kandinsky's theory
+            </p>
+        </div>
+        
+        <div class="color-theory-intro">
+            <strong>Kandinsky's Principle:</strong> In his teaching at the Bauhaus, Kandinsky proposed that certain colors naturally correspond to specific geometric forms based on their inherent properties. Yellow's sharp, radiating energy matches the acute triangle. Red's stable, grounded nature aligns with the square. Blue's infinite, spiritual quality resonates with the circle's endless form.
+        </div>
+        
+        <div class="color-game">
+            <!-- Color Palette Section -->
+            <div class="color-palette">
+                <h3 class="palette-title">Primary Colors</h3>
+                <p class="palette-instruction">
+                    <strong>Instructions:</strong> Drag or click each color swatch, then place it on the matching geometric form.
+                </p>
+                <div class="color-swatches">
+                    <div class="color-swatch color-swatch--yellow" 
+                         data-color="yellow" 
+                         draggable="true"
+                         aria-label="Yellow color swatch">
+                        <span class="swatch-label">Yellow</span>
+                    </div>
+                    <div class="color-swatch color-swatch--red" 
+                         data-color="red" 
+                         draggable="true"
+                         aria-label="Red color swatch">
+                        <span class="swatch-label">Red</span>
+                    </div>
+                    <div class="color-swatch color-swatch--blue" 
+                         data-color="blue" 
+                         draggable="true"
+                         aria-label="Blue color swatch">
+                        <span class="swatch-label">Blue</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Form Shapes Section -->
+            <div class="form-shapes">
+                <h3 class="shapes-title">Geometric Forms</h3>
+                <p class="shapes-instruction">
+                    <strong>Target:</strong> Match each color to its corresponding form. Which combinations feel correct?
+                </p>
+                <div class="shape-targets">
+                    <div class="shape-target" 
+                         data-shape="triangle" 
+                         aria-label="Triangle shape target">
+                        <div class="shape-icon shape-icon--triangle"></div>
+                        <span class="shape-label">Triangle</span>
+                    </div>
+                    <div class="shape-target" 
+                         data-shape="square" 
+                         aria-label="Square shape target">
+                        <div class="shape-icon shape-icon--square"></div>
+                        <span class="shape-label">Square</span>
+                    </div>
+                    <div class="shape-target" 
+                         data-shape="circle" 
+                         aria-label="Circle shape target">
+                        <div class="shape-icon shape-icon--circle"></div>
+                        <span class="shape-label">Circle</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Feedback Message -->
+        <div class="feedback-message" role="status" aria-live="polite"></div>
+        
+        <!-- Reset Button -->
+        <button class="reset-button">Reset Exercise</button>
+        
+        <!-- Educational Information -->
+        <div class="color-theory-info">
+            <h3 class="info-title">Understanding Kandinsky's Theory</h3>
+            <div class="info-content">
+                <div class="info-item">
+                    <h4>Yellow → Triangle</h4>
+                    <p>
+                        Yellow radiates energy in all directions like the acute angles of a triangle. Its sharp, penetrating quality mirrors the triangle's pointed form. Kandinsky described yellow as the color that "disturbs" and "advances toward the spectator."
+                    </p>
+                </div>
+                <div class="info-item">
+                    <h4>Red → Square</h4>
+                    <p>
+                        Red's stable, grounded energy corresponds to the square's balanced, equal-sided nature. It represents earthly materiality and physical presence. The square's right angles echo red's contained, self-assured character.
+                    </p>
+                </div>
+                <div class="info-item">
+                    <h4>Blue → Circle</h4>
+                    <p>
+                        Blue's infinite, spiritual quality resonates with the circle's endless, centerless form. It represents contemplation and transcendence. The circle's continuous curve mirrors blue's gentle, receding nature that "moves away from humanity."
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Historical Context Section -->
+<section class="context-section">
+    <div class="container">
+        <h2 class="section-title">Historical Context</h2>
+        <div class="context-grid">
+            <div class="context-item">
+                <h3>The Vorkurs (Preliminary Course)</h3>
+                <p>
+                    Kandinsky taught the analytical drawing course at the Bauhaus from 1922 to 1933. This color-form theory was central to his pedagogical method, training students to understand the psychological and spiritual properties of visual elements.
+                </p>
+            </div>
+            <div class="context-item">
+                <h3>Empirical Study (1923)</h3>
+                <p>
+                    Kandinsky distributed questionnaires to Bauhaus students asking them to fill a triangle, square, and circle with yellow, red, and blue. While results varied, a significant majority chose yellow-triangle, red-square, and blue-circle—validating his theory through collective intuition.
+                </p>
+            </div>
+            <div class="context-item">
+                <h3>Point and Line to Plane (1926)</h3>
+                <p>
+                    Kandinsky published his systematic analysis of visual elements while teaching at the Bauhaus. This treatise formalized his theories on the emotional and spiritual effects of color, form, and their combinations—making subjective experience into pedagogical doctrine.
+                </p>
+            </div>
+            <div class="context-item">
+                <h3>Contemporary Relevance</h3>
+                <p>
+                    Modern design psychology and user experience research have confirmed many of Kandinsky's intuitions about color associations. His systematic approach to understanding visual perception laid groundwork for contemporary design thinking and semiotics.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.page-header {
+    padding: var(--spacing-3xl) 0 var(--spacing-2xl);
+    background-color: var(--color-surface);
+    border-bottom: 2px solid var(--color-border);
+}
+
+.page-title {
+    font-size: var(--font-size-4xl);
+    font-weight: var(--font-weight-black);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-heading);
+}
+
+.page-description {
+    font-size: var(--font-size-lg);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+    max-width: 800px;
+}
+
+.context-section {
+    padding: var(--spacing-3xl) 0;
+    background-color: var(--color-bg);
+}
+
+.context-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: var(--spacing-xl);
+    margin-top: var(--spacing-2xl);
+}
+
+.context-item {
+    padding: var(--spacing-xl);
+    background-color: var(--color-surface);
+    border-left: 6px solid var(--color-primary);
+}
+
+.context-item h3 {
+    font-size: var(--font-size-xl);
+    font-weight: var(--font-weight-bold);
+    color: var(--color-text);
+    margin-bottom: var(--spacing-md);
+    text-transform: uppercase;
+    letter-spacing: var(--letter-spacing-heading);
+}
+
+.context-item p {
+    font-size: var(--font-size-body);
+    color: var(--color-text-secondary);
+    line-height: 1.7;
+}
+
+@media (max-width: 767px) {
+    .page-title {
+        font-size: var(--font-size-3xl);
+    }
+    
+    .context-grid {
+        grid-template-columns: 1fr;
+    }
+}
+</style>
+
+<script src="{{ '/js/color-theory.js' | baseUrl }}" defer></script>

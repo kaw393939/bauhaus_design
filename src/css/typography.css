@@ -1,0 +1,382 @@
+/* ========================================
+   FORTUNE 100 RESPONSIVE TYPOGRAPHY SYSTEM
+   Enterprise-grade type system with fluid scaling
+   ======================================== */
+
+/* ========================================
+   1. FLUID TYPOGRAPHY BASE SYSTEM
+   ======================================== */
+
+:root {
+  /* Typography Scale Configuration */
+  --type-ratio-mobile: 1.2;    /* Tighter scale for mobile */
+  --type-ratio-tablet: 1.25;   /* Standard major third */
+  --type-ratio-desktop: 1.3;   /* Slightly larger for desktop */
+  
+  /* Base Font Size (16px = 1rem) */
+  --type-base-size: 1rem;
+  
+  /* Viewport-based fluid calculations */
+  --type-min-screen: 20rem;    /* 320px */
+  --type-max-screen: 90rem;    /* 1440px */
+}
+
+/* ========================================
+   2. FLUID FONT SIZE SYSTEM
+   Using clamp() for smooth scaling between breakpoints
+   ======================================== */
+
+:root {
+  /* Display Typography (Hero, H1) - Largest impact */
+  --font-size-display-xl: clamp(3rem, 8vw, 7rem);           /* 48px → 112px */
+  --font-size-display-lg: clamp(2.5rem, 6vw, 5.5rem);      /* 40px → 88px */
+  --font-size-display-md: clamp(2rem, 5vw, 4.5rem);        /* 32px → 72px */
+  
+  /* Heading Typography - Hierarchical system */
+  --font-size-h1: clamp(1.75rem, 4vw, 3.5rem);             /* 28px → 56px */
+  --font-size-h2: clamp(1.5rem, 3.5vw, 2.75rem);           /* 24px → 44px */
+  --font-size-h3: clamp(1.25rem, 3vw, 2.25rem);            /* 20px → 36px */
+  --font-size-h4: clamp(1.125rem, 2.5vw, 1.75rem);         /* 18px → 28px */
+  --font-size-h5: clamp(1rem, 2vw, 1.5rem);                /* 16px → 24px */
+  --font-size-h6: clamp(0.95rem, 1.5vw, 1.25rem);          /* 15px → 20px */
+  
+  /* Body Typography - Reading optimized */
+  --font-size-body-xl: clamp(1.125rem, 2vw, 1.375rem);     /* 18px → 22px */
+  --font-size-body-lg: clamp(1.063rem, 1.5vw, 1.25rem);    /* 17px → 20px */
+  --font-size-body: clamp(1rem, 1vw, 1.125rem);            /* 16px → 18px */
+  --font-size-body-sm: clamp(0.875rem, 0.8vw, 1rem);       /* 14px → 16px */
+  --font-size-body-xs: clamp(0.75rem, 0.6vw, 0.875rem);    /* 12px → 14px */
+  
+  /* UI Typography - Interface elements */
+  --font-size-button: clamp(0.875rem, 1.2vw, 1rem);        /* 14px → 16px */
+  --font-size-label: clamp(0.75rem, 0.8vw, 0.875rem);      /* 12px → 14px */
+  --font-size-caption: clamp(0.625rem, 0.6vw, 0.75rem);    /* 10px → 12px */
+}
+
+/* ========================================
+   3. RESPONSIVE LINE HEIGHT SYSTEM
+   Optimized for readability at all sizes
+   ======================================== */
+
+:root {
+  /* Display line heights - Tighter for impact */
+  --line-height-display: 1.1;
+  --line-height-heading-xl: 1.15;
+  --line-height-heading-lg: 1.2;
+  --line-height-heading: 1.25;
+  
+  /* Body line heights - Optimized for reading */
+  --line-height-body-tight: 1.4;
+  --line-height-body: 1.5;
+  --line-height-body-relaxed: 1.6;
+  --line-height-body-loose: 1.7;
+  
+  /* UI line heights - Compact for interfaces */
+  --line-height-ui: 1.3;
+  --line-height-ui-tight: 1.2;
+}
+
+/* ========================================
+   4. RESPONSIVE LETTER SPACING
+   Bauhaus-inspired geometric precision
+   ======================================== */
+
+:root {
+  /* Responsive letter spacing that scales with font size */
+  --letter-spacing-display: clamp(-0.02em, -0.01vw, -0.015em);
+  --letter-spacing-heading: clamp(-0.01em, 0vw, 0.01em);
+  --letter-spacing-body: 0;
+  --letter-spacing-ui: clamp(0.01em, 0.1vw, 0.05em);
+  --letter-spacing-caps: clamp(0.05em, 0.2vw, 0.1em);     /* For uppercase */
+}
+
+/* ========================================
+   5. SEMANTIC TYPOGRAPHY CLASSES
+   Enterprise-ready component classes
+   ======================================== */
+
+/* Display Typography */
+.type-display-xl {
+  font-size: var(--font-size-display-xl);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--letter-spacing-display);
+  font-weight: var(--font-weight-black);
+  font-family: var(--font-display);
+}
+
+.type-display-lg {
+  font-size: var(--font-size-display-lg);
+  line-height: var(--line-height-display);
+  letter-spacing: var(--letter-spacing-display);
+  font-weight: var(--font-weight-black);
+  font-family: var(--font-display);
+}
+
+.type-display-md {
+  font-size: var(--font-size-display-md);
+  line-height: var(--line-height-heading-xl);
+  letter-spacing: var(--letter-spacing-display);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-display);
+}
+
+/* Heading Typography */
+.type-h1, h1 {
+  font-size: var(--font-size-h1);
+  line-height: var(--line-height-heading-xl);
+  letter-spacing: var(--letter-spacing-heading);
+  font-weight: var(--font-weight-black);
+  font-family: var(--font-display);
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+}
+
+.type-h2, h2 {
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-heading-lg);
+  letter-spacing: var(--letter-spacing-heading);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-display);
+  margin-bottom: clamp(0.4rem, 1.5vw, 0.8rem);
+}
+
+.type-h3, h3 {
+  font-size: var(--font-size-h3);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  font-weight: var(--font-weight-bold);
+  font-family: var(--font-display);
+  margin-bottom: clamp(0.3rem, 1vw, 0.6rem);
+}
+
+.type-h4, h4 {
+  font-size: var(--font-size-h4);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-display);
+  margin-bottom: clamp(0.25rem, 0.8vw, 0.5rem);
+}
+
+.type-h5, h5 {
+  font-size: var(--font-size-h5);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  font-weight: var(--font-weight-semibold);
+  font-family: var(--font-display);
+  margin-bottom: clamp(0.2rem, 0.6vw, 0.4rem);
+}
+
+.type-h6, h6 {
+  font-size: var(--font-size-h6);
+  line-height: var(--line-height-heading);
+  letter-spacing: var(--letter-spacing-heading);
+  font-weight: var(--font-weight-medium);
+  font-family: var(--font-display);
+  margin-bottom: clamp(0.15rem, 0.4vw, 0.3rem);
+}
+
+/* Body Typography */
+.type-body-xl, .type-lead {
+  font-size: var(--font-size-body-xl);
+  line-height: var(--line-height-body-relaxed);
+  letter-spacing: var(--letter-spacing-body);
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-body);
+}
+
+.type-body-lg {
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-body);
+}
+
+.type-body, p {
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-body);
+  margin-bottom: clamp(0.5rem, 1.5vw, 1rem);
+}
+
+.type-body-sm, .type-small {
+  font-size: var(--font-size-body-sm);
+  line-height: var(--line-height-body);
+  letter-spacing: var(--letter-spacing-body);
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-body);
+}
+
+.type-body-xs, .type-caption {
+  font-size: var(--font-size-body-xs);
+  line-height: var(--line-height-body-tight);
+  letter-spacing: var(--letter-spacing-body);
+  font-weight: var(--font-weight-normal);
+  font-family: var(--font-body);
+}
+
+/* ========================================
+   6. BAUHAUS-SPECIFIC TYPOGRAPHY UTILITIES
+   ======================================== */
+
+/* Uppercase with proper spacing */
+.type-caps {
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-caps);
+  font-weight: var(--font-weight-semibold);
+}
+
+/* Bauhaus accent styles */
+.type-accent {
+  color: var(--color-primary);
+  font-weight: var(--font-weight-bold);
+}
+
+.type-accent--secondary {
+  color: var(--color-secondary);
+  font-weight: var(--font-weight-bold);
+}
+
+.type-accent--yellow {
+  color: var(--color-accent);
+  font-weight: var(--font-weight-bold);
+}
+
+/* Geometric text alignment */
+.type-left {
+  text-align: left;
+}
+
+.type-center {
+  text-align: center;
+}
+
+.type-right {
+  text-align: right;
+}
+
+/* ========================================
+   7. RESPONSIVE TYPOGRAPHY OPTIMIZATION
+   ======================================== */
+
+/* Prevent orphans and improve readability */
+.type-no-orphans {
+  text-wrap: balance; /* Modern browsers */
+  hyphens: auto;
+}
+
+/* Improved readability for long content */
+.type-readable {
+  max-width: 70ch;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* ========================================
+   8. PERFORMANCE OPTIMIZATIONS
+   ======================================== */
+
+/* Font loading optimization */
+.font-display-swap {
+  font-display: swap;
+}
+
+/* Prevent layout shift */
+.font-size-adjust {
+  font-size-adjust: from-font;
+}
+
+/* ========================================
+   9. ACCESSIBILITY ENHANCEMENTS
+   ======================================== */
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+  .type-body,
+  .type-body-lg,
+  .type-body-xl {
+    font-weight: var(--font-weight-medium);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  .type-display-xl,
+  .type-display-lg,
+  .type-display-md {
+    animation: none;
+    transition: none;
+  }
+}
+
+/* Large text preference */
+@media (prefers-reduced-data: reduce) {
+  :root {
+    /* Smaller font sizes to reduce data usage */
+    --font-size-display-xl: clamp(2.5rem, 6vw, 5rem);
+    --font-size-display-lg: clamp(2rem, 5vw, 4rem);
+  }
+}
+
+/* ========================================
+   10. PRINT STYLES
+   ======================================== */
+
+@media print {
+  .type-display-xl,
+  .type-display-lg,
+  .type-display-md,
+  .type-h1,
+  .type-h2 {
+    page-break-after: avoid;
+    break-after: avoid;
+  }
+  
+  .type-body,
+  .type-body-lg,
+  .type-body-xl {
+    font-size: 12pt;
+    line-height: 1.4;
+  }
+}
+
+/* ========================================
+   11. LEGACY BROWSER FALLBACKS
+   ======================================== */
+
+/* Fallback for browsers without clamp() support */
+@supports not (font-size: clamp(1rem, 4vw, 3rem)) {
+  .type-display-xl {
+    font-size: var(--font-size-5xl);
+  }
+  
+  .type-h1 {
+    font-size: var(--font-size-3xl);
+  }
+  
+  .type-h2 {
+    font-size: var(--font-size-2xl);
+  }
+  
+  @media (min-width: 768px) {
+    .type-display-xl {
+      font-size: var(--font-size-6xl);
+    }
+    
+    .type-h1 {
+      font-size: var(--font-size-4xl);
+    }
+  }
+  
+  @media (min-width: 1024px) {
+    .type-display-xl {
+      font-size: var(--font-size-7xl);
+    }
+    
+    .type-h1 {
+      font-size: var(--font-size-5xl);
+    }
+  }
+}

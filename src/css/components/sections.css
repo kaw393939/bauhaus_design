@@ -1,0 +1,294 @@
+/* ========================================
+   SECTION COMPONENTS
+   Page headers, section headers, and CTA sections
+   ======================================== */
+
+/* ========================================
+   PAGE HEADERS - MUSEUM BAUHAUS STYLE
+   ======================================== */
+
+.page-header {
+  padding: var(--spacing-xl) 0 var(--spacing-lg);
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bauhaus geometric background accent */
+.page-header::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    var(--color-bauhaus-red) 0%,
+    var(--color-bauhaus-red) 33%,
+    var(--color-bauhaus-blue) 33%,
+    var(--color-bauhaus-blue) 66%,
+    var(--color-bauhaus-yellow) 66%,
+    var(--color-bauhaus-yellow) 100%
+  );
+}
+
+.page-title {
+  /* Fortune 100 Typography: H1 for page titles */
+  font-size: var(--font-size-h1);
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-heading);
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  text-transform: uppercase;
+  letter-spacing: var(--letter-spacing-heading);
+  font-family: var(--font-display);
+  position: relative;
+}
+
+/* Bauhaus accent mark */
+.page-title::after {
+  content: '';
+  position: absolute;
+  bottom: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 60px;
+  height: 4px;
+  background-color: var(--color-primary);
+}
+
+.page-subtitle {
+  /* Fortune 100 Typography: Body large for page subtitles */
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body);
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: var(--font-body);
+}
+
+/* ========================================
+   SECTION HEADERS - MUSEUM BAUHAUS STYLE
+   ======================================== */
+
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-xl);
+  position: relative;
+}
+
+.section-title {
+  /* Fortune 100 Typography: Fluid responsive heading - MOMA FIX: H2 not H1 */
+  font-size: var(--font-size-h2);
+  font-weight: 800;  /* Slightly reduced from 900 for hierarchy */
+  line-height: var(--line-height-heading);
+  margin-bottom: clamp(1rem, 3vw, 2rem);
+  text-align: center;
+  letter-spacing: var(--letter-spacing-heading);
+  text-transform: uppercase;
+  position: relative;
+  font-family: var(--font-display);
+  color: var(--color-text);
+}
+
+/* Bauhaus tricolor underline - Museum quality */
+.section-title::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;  /* Wider for impact */
+  height: 6px;  /* Thicker for boldness */
+  background: linear-gradient(
+    to right,
+    var(--color-bauhaus-red) 0%,
+    var(--color-bauhaus-red) 33%,
+    var(--color-bauhaus-blue) 33%,
+    var(--color-bauhaus-blue) 66%,
+    var(--color-bauhaus-yellow) 66%,
+    var(--color-bauhaus-yellow) 100%
+  );
+}
+
+/* Geometric accent for section headers */
+.section-header::before {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 40px;
+  border: 3px solid var(--color-primary);
+  border-radius: 50%;
+  opacity: 0.2;
+}
+
+.section-subtitle {
+  /* Fortune 100 Typography: Body text for section subtitles */
+  font-size: var(--font-size-body);
+  line-height: var(--line-height-body);
+  color: var(--color-text-light);
+  max-width: 600px;
+  margin: clamp(0.5rem, 2vw, 1rem) auto 0;
+  font-family: var(--font-body);
+}
+
+/* ========================================
+   PROJECT SHOWCASE
+   ======================================== */
+
+.projects-section {
+  padding: var(--spacing-3xl) 0;  /* MOMA FIX: Increased to 64px for museum breathing room */
+}
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: var(--spacing-md);  /* Reduced from 2xl (48px) to md (16px) for better density */
+  margin-bottom: var(--spacing-lg);  /* Reduced from 2xl (48px) to lg (24px) */
+}
+
+/* ========================================
+   BLOG SECTION
+   ======================================== */
+
+.blog-section {
+  padding: var(--spacing-3xl) 0;  /* MOMA FIX: Increased to 64px for museum breathing room */
+  background-color: var(--color-bg-alt);
+}
+
+.posts-list {
+  display: grid;
+  gap: var(--spacing-xl);
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ========================================
+   CTA SECTION - MUSEUM BAUHAUS BOLDNESS
+   ======================================== */
+
+.cta-section {
+  padding: var(--spacing-4xl) 0;  /* MOMA FIX: Increased to 96px for major section impact */
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-primary-dark) 100%
+  );
+  color: var(--color-bauhaus-white);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Bauhaus geometric overlay for depth */
+.cta-section::before {
+  content: '';
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 400px;
+  height: 400px;
+  background-color: var(--color-bauhaus-red);
+  opacity: 0.15;
+  border-radius: 50%;
+  animation: float 15s ease-in-out infinite;
+}
+
+.cta-section::after {
+  content: '';
+  position: absolute;
+  bottom: -50px;
+  left: -50px;
+  width: 300px;
+  height: 300px;
+  background-color: var(--color-bauhaus-yellow);
+  opacity: 0.1;
+  transform: rotate(45deg);
+  animation: rotate 20s linear infinite;
+}
+
+.cta-content {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 1;
+  text-align: center;
+}
+
+.cta-title {
+  /* Fortune 100 Typography: H2 for CTA titles */
+  font-size: var(--font-size-h2);
+  line-height: var(--line-height-heading);
+  color: var(--color-bauhaus-white);
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  font-family: var(--font-display);
+  letter-spacing: var(--letter-spacing-heading);
+  font-weight: var(--font-weight-black);  /* BOLDER for impact */
+  text-transform: uppercase;
+}
+
+.cta-text {
+  /* Fortune 100 Typography: Body large for CTA text */
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body);
+  color: var(--color-concrete);
+  max-width: 600px;
+  margin: 0 auto clamp(1rem, 3vw, 1.5rem);
+  font-family: var(--font-body);
+}
+
+.cta-actions {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: var(--spacing-md);
+}
+
+/* ========================================
+   RESPONSIVE SECTIONS
+   ======================================== */
+
+/* Mobile adjustments: Below 768px */
+@media (max-width: 767px) {
+  /* Typography sizing handled by Fortune 100 clamp() system */
+  .section-header {
+    margin-bottom: var(--spacing-lg);  /* More space on mobile */
+    padding: 0 var(--spacing-sm);  /* Add padding */
+  }
+
+  .cta-actions {
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+
+  /* Tighter spacing on mobile */
+  .card-title {
+    font-size: var(--font-size-lg);
+  }
+  
+  /* MOMA FIX: Ensure 44x44px minimum touch targets */
+  .card-link,
+  .section-footer .btn {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+}
+
+/* Small mobile: Below 480px */
+@media (max-width: 479px) {
+  /* Typography sizing handled by Fortune 100 clamp() system */
+  
+  .container {
+    padding-left: var(--spacing-sm);  /* Keep reasonable padding */
+    padding-right: var(--spacing-sm);
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;  /* Single column on very small screens */
+  }
+}

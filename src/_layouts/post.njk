@@ -2,7 +2,31 @@
 layout: base.njk
 ---
 
-<article class="post">
+<!-- Reading Progress Indicator -->
+<div class="reading-progress">
+    <div class="reading-progress-bar"></div>
+</div>
+
+<!-- Breadcrumbs Navigation -->
+<nav class="breadcrumbs" aria-label="Breadcrumb">
+    <div class="breadcrumbs-container">
+        <ol class="breadcrumbs-list">
+            <li class="breadcrumb-item">
+                <a href="{{ '/' | baseUrl }}" class="breadcrumb-link">Home</a>
+                <span class="breadcrumb-separator" aria-hidden="true">→</span>
+            </li>
+            <li class="breadcrumb-item">
+                <a href="{{ '/blog/' | baseUrl }}" class="breadcrumb-link">Thoughts</a>
+                <span class="breadcrumb-separator" aria-hidden="true">→</span>
+            </li>
+            <li class="breadcrumb-item">
+                <span class="breadcrumb-current" aria-current="page">{{ title }}</span>
+            </li>
+        </ol>
+    </div>
+</nav>
+
+<article class="post" data-reading-time>
     <header class="post-header">
         <div class="container container--narrow">
             {% if date %}
@@ -17,13 +41,41 @@ layout: base.njk
             <p class="post-excerpt">{{ description }}</p>
             {% endif %}
             
-            <div class="post-meta">
+            <!-- Enhanced Article Metadata -->
+            <div class="article-meta">
                 {% if author %}
-                <span class="post-author">By {{ author }}</span>
+                <div class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="12" cy="7" r="4"></circle>
+                    </svg>
+                    <span class="meta-label">Author:</span>
+                    <span class="meta-value">{{ author }}</span>
+                </div>
                 {% endif %}
                 
-                {% if content %}
-                <span class="post-reading-time">{{ content | readingTime }} min read</span>
+                <div class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <polyline points="12 6 12 12 16 14"></polyline>
+                    </svg>
+                    <span class="meta-label">Reading Time:</span>
+                    <span class="meta-value post-reading-time">5 min read</span>
+                </div>
+                
+                {% if tags and tags.length > 0 %}
+                <div class="meta-item">
+                    <svg class="meta-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M20.59 13.41l-7.17 7.17a2 2 0 0 1-2.83 0L2 12V2h10l8.59 8.59a2 2 0 0 1 0 2.82z"></path>
+                        <line x1="7" y1="7" x2="7.01" y2="7"></line>
+                    </svg>
+                    <span class="meta-label">Category:</span>
+                    <span class="meta-value">
+                        {% for tag in tags %}
+                        {% if tag != "blog" %}{{ tag | capitalize }}{% endif %}
+                        {% endfor %}
+                    </span>
+                </div>
                 {% endif %}
             </div>
             
@@ -49,12 +101,49 @@ layout: base.njk
         <div class="container container--narrow">
             <nav class="post-navigation" aria-label="Post navigation">
                 <a href="{{ '/blog/' | baseUrl }}" class="btn btn--outline">
-                    ← Back to Blog
+                    ← Back to Thoughts
                 </a>
             </nav>
         </div>
     </footer>
 </article>
+
+<!-- Related Content Section -->
+<section class="related-content">
+    <div class="related-content-header">
+        <h2 class="related-content-title">Continue Your Exploration</h2>
+        <p class="related-content-subtitle">Discover more about Bauhaus principles and their contemporary applications</p>
+    </div>
+    <div class="related-grid">
+        <a href="{{ '/projects/' | baseUrl }}" class="card">
+            <div class="card-content">
+                <h3 class="card-title">Bauhaus Principles</h3>
+                <p class="card-description">Explore how form follows function through interactive demonstrations</p>
+                <div class="card-footer">
+                    <span class="card-link">View Projects →</span>
+                </div>
+            </div>
+        </a>
+        <a href="{{ '/blog/' | baseUrl }}" class="card">
+            <div class="card-content">
+                <h3 class="card-title">More Articles</h3>
+                <p class="card-description">Deep-dive into Bauhaus history, legacy, and contemporary influence</p>
+                <div class="card-footer">
+                    <span class="card-link">Read More →</span>
+                </div>
+            </div>
+        </a>
+        <a href="{{ '/about/' | baseUrl }}" class="card">
+            <div class="card-content">
+                <h3 class="card-title">About Bauhaus</h3>
+                <p class="card-description">Learn about the complete history from 1919 to its lasting global impact</p>
+                <div class="card-footer">
+                    <span class="card-link">Learn More →</span>
+                </div>
+            </div>
+        </a>
+    </div>
+</section>
 
 <style>
 /* Post-specific styles */

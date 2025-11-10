@@ -1,0 +1,393 @@
+/* ========================================
+   PRINT STYLESHEET
+   Museum-quality print formatting
+   ======================================== */
+
+@media print {
+  /* ========================================
+     RESET & BASICS
+     ======================================== */
+  
+  * {
+    background: transparent !important;
+    color: #000 !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  html {
+    font-size: 12pt;
+  }
+
+  body {
+    background: white !important;
+    color: black !important;
+    font-family: Georgia, 'Times New Roman', serif;
+    line-height: 1.5;
+    margin: 0;
+    padding: 0;
+  }
+
+  /* ========================================
+     HIDE UNNECESSARY ELEMENTS
+     ======================================== */
+  
+  .site-header,
+  .site-footer,
+  .breadcrumbs,
+  .reading-progress,
+  .nav-menu,
+  .hamburger,
+  .theme-toggle,
+  .desktop-theme-toggle,
+  .geometric-background,
+  .geometric-decoration,
+  .post-navigation,
+  .related-content,
+  .color-theory-explorer,
+  .btn,
+  button,
+  .skip-link,
+  .social-links,
+  video,
+  iframe {
+    display: none !important;
+  }
+
+  /* ========================================
+     TYPOGRAPHY
+     ======================================== */
+  
+  h1 {
+    font-size: 24pt;
+    font-weight: bold;
+    margin-bottom: 12pt;
+    page-break-after: avoid;
+  }
+
+  h2 {
+    font-size: 18pt;
+    font-weight: bold;
+    margin-top: 20pt;
+    margin-bottom: 10pt;
+    page-break-after: avoid;
+  }
+
+  h3 {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-top: 16pt;
+    margin-bottom: 8pt;
+    page-break-after: avoid;
+  }
+
+  h4 {
+    font-size: 12pt;
+    font-weight: bold;
+    margin-top: 12pt;
+    margin-bottom: 6pt;
+    page-break-after: avoid;
+  }
+
+  p {
+    margin-bottom: 10pt;
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* ========================================
+     LINKS
+     ======================================== */
+  
+  a {
+    color: #000 !important;
+    text-decoration: underline;
+  }
+
+  /* Show URL after links */
+  a[href^="http"]:after {
+    content: " (" attr(href) ")";
+    font-size: 90%;
+    font-style: italic;
+  }
+
+  /* Don't show URLs for fragment identifiers */
+  a[href^="#"]:after {
+    content: "";
+  }
+
+  /* Don't show URLs for images */
+  a[href$=".jpg"]:after,
+  a[href$=".jpeg"]:after,
+  a[href$=".png"]:after,
+  a[href$=".gif"]:after {
+    content: "";
+  }
+
+  /* ========================================
+     ARTICLE STRUCTURE
+     ======================================== */
+  
+  .post-header {
+    border-bottom: 2pt solid #000;
+    padding-bottom: 12pt;
+    margin-bottom: 20pt;
+  }
+
+  .post-date {
+    font-size: 10pt;
+    font-style: italic;
+    display: block;
+    margin-bottom: 6pt;
+  }
+
+  .post-title {
+    font-size: 24pt;
+    font-weight: bold;
+    margin: 0;
+    line-height: 1.2;
+  }
+
+  .post-excerpt {
+    font-size: 12pt;
+    font-style: italic;
+    margin: 12pt 0;
+    line-height: 1.6;
+  }
+
+  .article-meta {
+    border: none;
+    background: none;
+    padding: 0;
+    margin: 12pt 0;
+    font-size: 10pt;
+  }
+
+  .meta-icon {
+    display: none;
+  }
+
+  .post-tags {
+    margin-top: 8pt;
+  }
+
+  .tag {
+    display: inline-block;
+    border: 1pt solid #000;
+    padding: 2pt 6pt;
+    margin-right: 4pt;
+    font-size: 9pt;
+  }
+
+  /* ========================================
+     CONTENT
+     ======================================== */
+  
+  .post-content {
+    max-width: 100%;
+  }
+
+  .container--narrow {
+    max-width: 100%;
+    padding: 0;
+  }
+
+  /* Lists */
+  ul, ol {
+    margin: 10pt 0;
+    padding-left: 20pt;
+  }
+
+  li {
+    margin-bottom: 4pt;
+  }
+
+  /* Code */
+  code {
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 10pt;
+    border: 1pt solid #ccc;
+    padding: 1pt 3pt;
+  }
+
+  pre {
+    border: 1pt solid #000;
+    padding: 10pt;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+  }
+
+  pre code {
+    border: none;
+    padding: 0;
+  }
+
+  /* Blockquotes */
+  blockquote {
+    border-left: 3pt solid #000;
+    padding-left: 12pt;
+    margin: 12pt 0;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+
+  /* Images */
+  img {
+    max-width: 100% !important;
+    page-break-inside: avoid;
+    page-break-after: avoid;
+  }
+
+  /* ========================================
+     TABLES
+     ======================================== */
+  
+  table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: 12pt 0;
+    page-break-inside: avoid;
+  }
+
+  thead {
+    display: table-header-group;
+  }
+
+  tr {
+    page-break-inside: avoid;
+  }
+
+  th, td {
+    border: 1pt solid #000;
+    padding: 6pt;
+    text-align: left;
+  }
+
+  th {
+    font-weight: bold;
+    background: #f0f0f0 !important;
+  }
+
+  /* ========================================
+     PAGE BREAKS
+     ======================================== */
+  
+  h1, h2, h3, h4, h5, h6 {
+    page-break-after: avoid;
+  }
+
+  img, figure, table, pre, blockquote {
+    page-break-inside: avoid;
+  }
+
+  p {
+    orphans: 3;
+    widows: 3;
+  }
+
+  /* ========================================
+     HEADER & FOOTER (Page margins)
+     ======================================== */
+  
+  @page {
+    margin: 2cm;
+    
+    @top-right {
+      content: counter(page);
+    }
+  }
+
+  /* Print article title in header */
+  .post-title:before {
+    display: block;
+    content: "Bauhaus Revival";
+    font-size: 10pt;
+    font-weight: normal;
+    text-align: center;
+    padding-bottom: 12pt;
+    page-break-after: avoid;
+  }
+
+  /* ========================================
+     CARDS (if printed from homepage)
+     ======================================== */
+  
+  .card {
+    border: 1pt solid #000;
+    padding: 12pt;
+    margin-bottom: 12pt;
+    page-break-inside: avoid;
+  }
+
+  .card-title {
+    font-size: 14pt;
+    font-weight: bold;
+    margin-bottom: 6pt;
+  }
+
+  .card-description {
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  /* ========================================
+     PROJECTS GRID
+     ======================================== */
+  
+  .projects-grid,
+  .blog-grid {
+    display: block !important;
+  }
+
+  .projects-grid .card,
+  .blog-grid .card {
+    margin-bottom: 20pt;
+  }
+
+  /* ========================================
+     UTILITIES
+     ======================================== */
+  
+  .no-print {
+    display: none !important;
+  }
+
+  .print-only {
+    display: block !important;
+  }
+
+  /* Screen reader text should not print */
+  .sr-only {
+    display: none !important;
+  }
+
+  /* ========================================
+     BAUHAUS BRANDING (Minimal)
+     ======================================== */
+  
+  /* Add subtle Bauhaus identity */
+  .post-header:before {
+    content: "";
+    display: block;
+    height: 3pt;
+    width: 100pt;
+    background: linear-gradient(to right, #000 0%, #000 33%, #666 33%, #666 66%, #ccc 66%, #ccc 100%);
+    margin-bottom: 12pt;
+  }
+
+  /* ========================================
+     COPYRIGHT & ATTRIBUTION
+     ======================================== */
+  
+  /* Add print attribution at end */
+  .post-content:after {
+    content: "© 2025 Bauhaus Revival. Designed with Bauhaus Principles. Printed from " attr(data-url);
+    display: block;
+    margin-top: 24pt;
+    padding-top: 12pt;
+    border-top: 1pt solid #000;
+    font-size: 9pt;
+    font-style: italic;
+    page-break-inside: avoid;
+  }
+}

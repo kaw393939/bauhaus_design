@@ -3,10 +3,11 @@
    Content containers with Bauhaus styling
    ======================================== */
 
-/* Base card - BAUHAUS: Sharp geometric edges only */
+/* Base card - BAUHAUS: Sharp geometric edges only - MOMA FIX: Add tricolor system */
 .card {
   background-color: var(--color-bg);
   border: 2px solid var(--color-border);
+  border-left: 4px solid transparent;  /* MOMA FIX: Prepare for tricolor */
   border-radius: 0;  /* Bauhaus principle: No rounded corners */
   overflow: hidden;
   transition: all var(--transition-bauhaus);
@@ -16,6 +17,21 @@
 .card:hover {
   transform: translateY(-4px);
   box-shadow: var(--shadow-bauhaus-md);
+  border-left-color: var(--color-primary);  /* MOMA FIX: Show color on hover */
+  border-left-width: 6px;  /* MOMA FIX: Thicken on hover */
+}
+
+/* MOMA FIX: Alternate tricolor pattern for variety */
+.card:nth-child(3n+1):hover {
+  border-left-color: var(--color-bauhaus-red);
+}
+
+.card:nth-child(3n+2):hover {
+  border-left-color: var(--color-bauhaus-blue);
+}
+
+.card:nth-child(3n+3):hover {
+  border-left-color: var(--color-bauhaus-yellow);
 }
 
 /* Card parts */
@@ -41,38 +57,67 @@
 
 .card-body,
 .card-content {
-  padding: var(--spacing-md);  /* Reduced from lg (24px) to md (16px) for better density */
+  padding: var(--spacing-xl);  /* MOMA FIX: Increased from md to xl for elegance */
+  flex-grow: 1;
 }
 
 .card-title {
-  font-size: var(--font-size-xl);  /* Reduced from 2xl for better hierarchy */
-  font-weight: var(--font-weight-bold);
-  margin-bottom: var(--spacing-sm);
+  /* Fortune 100 Typography: Card title - MOMA FIX: More authoritative */
+  font-size: var(--font-size-xl);  /* Increased from h3 */
+  font-weight: 700;
+  line-height: var(--line-height-heading);
+  margin-bottom: var(--spacing-md);  /* More space */
+  font-family: var(--font-display);
+  letter-spacing: 0.02em;  /* Bauhaus tracking */
+  text-transform: uppercase;  /* Bauhaus geometric authority */
 }
 
 .card-title a {
   color: var(--color-text);
+  text-decoration: none;
+  position: relative;
   transition: color var(--transition-fast);
+}
+
+/* Bauhaus underline hover effect */
+.card-title a::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 3px;
+  background: var(--color-primary);
+  transition: width 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);  /* Bauhaus mechanical easing */
 }
 
 .card-title a:hover {
   color: var(--color-primary);
 }
 
+.card-title a:hover::after {
+  width: 100%;
+}
+
 .card-subtitle {
-  font-size: var(--font-size-sm);
+  /* Fortune 100 Typography: Caption style for card metadata */
+  font-size: var(--font-size-caption);
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
-  margin-bottom: var(--spacing-md);
+  letter-spacing: var(--letter-spacing-caption);
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
 }
 
 .card-text,
 .card-description {
-  font-size: var(--font-size-sm);  /* Reduced from base (16px) to sm (14px) for better density */
-  line-height: var(--line-height-normal);  /* Reduced from relaxed (1.75) to normal (1.5) */
+  /* Fortune 100 Typography: Body small for card descriptions */
+  font-size: var(--font-size-body-sm);
+  line-height: 1.8;  /* MOMA FIX: More generous line height */
   color: var(--color-text-light);
-  margin-bottom: var(--spacing-sm);  /* Reduced from md (16px) to sm (8px) */
+  margin-bottom: var(--spacing-lg);  /* MOMA FIX: More separation */
+  font-family: var(--font-body);
 }
 
 .card-footer {
@@ -109,7 +154,7 @@
   box-shadow: none;
 }
 
-/* Geometric card overlays */
+/* Geometric card overlays - MUSEUM BAUHAUS STYLE */
 .card-geometric {
   position: relative;
 }
@@ -119,21 +164,83 @@
   position: absolute;
   top: 0;
   right: 0;
-  width: 80px;
-  height: 80px;
+  width: 100px;
+  height: 100px;
   background-color: var(--color-accent);
   clip-path: polygon(100% 0, 0 0, 100% 100%);
   z-index: 1;
+  opacity: 0.9;  /* Bold Bauhaus accent */
 }
 
-/* Meta information in cards */
+/* Alternating geometric patterns for visual rhythm */
+.card:nth-child(3n+1) .card-geometric::before {
+  background-color: var(--color-bauhaus-yellow);
+  top: 0;
+  right: 0;
+  clip-path: polygon(100% 0, 0 0, 100% 100%);  /* Top-right triangle */
+}
+
+.card:nth-child(3n+2) .card-geometric::before {
+  background-color: var(--color-bauhaus-red);
+  top: 0;
+  left: 0;
+  right: auto;
+  width: 60px;
+  height: 60px;
+  clip-path: circle(50%);  /* Circle accent */
+}
+
+.card:nth-child(3n+3) .card-geometric::before {
+  background-color: var(--color-bauhaus-blue);
+  bottom: 0;
+  top: auto;
+  right: 0;
+  width: 80px;
+  height: 80px;
+  clip-path: none;  /* Square accent */
+}
+
+/* Project card color coding - Bauhaus color theory */
+.project-card {
+  position: relative;
+  background-color: var(--color-bg);
+  border: 2px solid var(--color-border);
+  overflow: hidden;
+  transition: all var(--transition-bauhaus);
+}
+
+.project-card::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 6px;
+  height: 100%;
+  background: linear-gradient(
+    to bottom,
+    var(--color-bauhaus-red) 0%,
+    var(--color-bauhaus-blue) 50%,
+    var(--color-bauhaus-yellow) 100%
+  );
+  z-index: 1;
+}
+
+.project-card:hover {
+  border-color: var(--color-primary);
+  box-shadow: var(--shadow-bauhaus-md);
+  transform: translateY(-4px);
+}
 .card-meta {
   display: flex;
   align-items: center;
   gap: var(--spacing-md);
-  font-size: var(--font-size-sm);
+  /* Fortune 100 Typography: Caption for metadata */
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
   color: var(--color-text-muted);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  font-family: var(--font-body);
+  font-weight: var(--font-weight-medium);
 }
 
 .card-meta-item {
@@ -153,15 +260,18 @@
 
 .tag {
   display: inline-block;
-  padding: 0.125rem 0.5rem;  /* Reduced padding: 2px/8px (was 4px/16px) */
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-medium);
+  padding: 0.125rem 0.5rem;
+  /* Fortune 100 Typography: Overline style for tags */
+  font-size: var(--font-size-overline);
+  font-weight: var(--font-weight-overline);
+  line-height: var(--line-height-overline);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
+  letter-spacing: var(--letter-spacing-overline);
   background-color: var(--color-bg-alt);
   color: var(--color-text);
   border-radius: 0;
   transition: all var(--transition-fast);
+  font-family: var(--font-body);
 }
 
 .tag:hover {
@@ -201,12 +311,15 @@
 .project-status {
   display: inline-block;
   padding: var(--spacing-xs) var(--spacing-sm);
-  font-size: var(--font-size-xs);
-  font-weight: var(--font-weight-bold);
+  /* Fortune 100 Typography: Overline for status badges */
+  font-size: var(--font-size-overline);
+  font-weight: var(--font-weight-overline);
+  line-height: var(--line-height-overline);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wider);
+  letter-spacing: var(--letter-spacing-overline);
   border-radius: 0;
-  margin-bottom: var(--spacing-md);
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  font-family: var(--font-body);
 }
 
 .status-completed {
@@ -224,32 +337,87 @@
   color: var(--color-bauhaus-white);
 }
 
-/* Blog post cards - BAUHAUS: Bold borders, sharp edges */
+/* Blog post cards - MUSEUM BAUHAUS: Bold geometric borders */
 .post-card {
   background-color: var(--color-bg);
-  border-left: 6px solid var(--color-primary);  /* Increased from 4px */
+  border-left: 8px solid var(--color-primary);  /* BOLDER Bauhaus statement */
   border-radius: 0;  /* Bauhaus: No rounded corners */
-  padding: var(--spacing-md);  /* Reduced from lg for better density */
-  transition: all var(--transition-fast);
+  padding: var(--spacing-md);
+  transition: all var(--transition-bauhaus);
+  position: relative;
+}
+
+/* Alternating color system for visual rhythm */
+.post-card:nth-child(3n+1) {
+  border-left-color: var(--color-bauhaus-blue);
+}
+
+.post-card:nth-child(3n+2) {
+  border-left-color: var(--color-bauhaus-red);
+}
+
+.post-card:nth-child(3n+3) {
+  border-left-color: var(--color-bauhaus-yellow);
 }
 
 .post-card:hover {
   background-color: var(--color-bg-alt);
-  border-left-color: var(--color-secondary);
-  border-left-width: 8px;  /* Even bolder on hover */
-  padding-left: var(--spacing-lg);  /* Adjusted for new base padding */
+  border-left-width: 12px;  /* DRAMATIC Bauhaus emphasis */
+  padding-left: var(--spacing-lg);
+  box-shadow: var(--shadow-bauhaus-sm);
+}
+
+/* Geometric accent for blog cards */
+.post-card::after {
+  content: '';
+  position: absolute;
+  top: var(--spacing-md);
+  right: var(--spacing-md);
+  width: 40px;
+  height: 40px;
+  border: 3px solid currentColor;
+  opacity: 0.15;
+  transition: all var(--transition-bauhaus);
+}
+
+.post-card:nth-child(3n+1)::after {
+  border-radius: 50%;  /* Circle */
+  border-color: var(--color-bauhaus-blue);
+}
+
+.post-card:nth-child(3n+2)::after {
+  border-radius: 0;  /* Square */
+  border-color: var(--color-bauhaus-red);
+  transform: rotate(45deg);
+}
+
+.post-card:nth-child(3n+3)::after {
+  border-radius: 0;
+  width: 0;
+  height: 0;
+  border: 20px solid transparent;
+  border-left-color: var(--color-bauhaus-yellow);
+  border-left-width: 30px;
+}
+
+.post-card:hover::after {
+  opacity: 0.3;
+  transform: scale(1.1);
 }
 
 .post-date {
-  font-size: var(--font-size-sm);
+  /* Fortune 100 Typography: Caption for post dates */
+  font-size: var(--font-size-caption);
+  line-height: var(--line-height-caption);
   color: var(--color-text-muted);
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
+  letter-spacing: var(--letter-spacing-caption);
   font-weight: var(--font-weight-medium);
+  font-family: var(--font-body);
 }
 
 /* Responsive cards */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .card {
     margin-bottom: var(--spacing-lg);  /* Better spacing between cards */
     border-width: 1px;  /* Thinner borders on mobile */
@@ -269,16 +437,30 @@
   }
 
   .card-content {
-    padding: var(--spacing-md);  /* Better mobile padding */
+    padding: var(--spacing-lg);  /* MOMA FIX: Maintain generous padding on mobile */
+  }
+  
+  /* MOMA FIX: Ensure 44x44px minimum touch targets */
+  .card-link {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    padding: var(--spacing-sm) 0;
+  }
+  
+  .card-footer {
+    padding: var(--spacing-md);
   }
 
   .card-title {
-    font-size: var(--font-size-lg);  /* Better mobile typography */
-    margin-bottom: var(--spacing-sm);
+    /* Fortune 100 Typography: Mobile H4 for better hierarchy */
+    font-size: var(--font-size-h4);
+    margin-bottom: clamp(0.25rem, 1vw, 0.5rem);
   }
 
   .card-description {
-    font-size: var(--font-size-sm);  /* Smaller text on mobile */
-    line-height: 1.5;
+    /* Fortune 100 Typography: Mobile body small */
+    font-size: var(--font-size-body-sm);
+    line-height: var(--line-height-body);
   }
 }

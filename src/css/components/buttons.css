@@ -10,13 +10,14 @@
   justify-content: center;
   gap: var(--spacing-sm);
   padding: var(--spacing-md) var(--spacing-xl);
+  /* Fortune 100 Typography: Button text styling */
   font-family: var(--font-display);
-  font-size: var(--font-size-base);
-  font-weight: var(--font-weight-semibold);
-  line-height: 1;
+  font-size: var(--font-size-button);
+  font-weight: var(--font-weight-button);
+  line-height: var(--line-height-button);
   text-decoration: none;
   text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-wide);
+  letter-spacing: var(--letter-spacing-button);
   border: 3px solid transparent;
   border-radius: var(--radius-none);
   cursor: pointer;
@@ -30,22 +31,26 @@
   cursor: not-allowed;
 }
 
-/* Button sizes */
+/* Button sizes with Fortune 100 typography */
 .btn-sm {
   padding: var(--spacing-sm) var(--spacing-lg);
-  font-size: var(--font-size-sm);
+  font-size: var(--font-size-button-sm);
+  letter-spacing: var(--letter-spacing-button);
 }
 
 .btn-lg {
   padding: var(--spacing-lg) var(--spacing-2xl);
-  font-size: var(--font-size-lg);
+  font-size: var(--font-size-button-lg);
+  letter-spacing: var(--letter-spacing-button);
 }
 
-/* Primary button */
+/* Primary button - MUSEUM BAUHAUS BOLDNESS */
 .btn-primary {
   background-color: var(--color-primary);
   color: var(--color-bauhaus-white);
   border-color: var(--color-primary);
+  box-shadow: 6px 6px 0 var(--color-bauhaus-black);  /* Bauhaus hard shadow */
+  transition: all var(--transition-bauhaus);
 }
 
 .btn-primary::before {
@@ -60,21 +65,39 @@
   z-index: -1;
 }
 
-.btn-primary:hover::before {
-  left: 0;
-}
-
 .btn-primary:hover {
-  border-color: var(--color-primary-dark);
+  transform: translate(3px, 3px);  /* Move toward shadow */
+  box-shadow: 3px 3px 0 var(--color-bauhaus-black);
   background-color: var(--color-accent);  /* Bauhaus yellow on hover */
   color: var(--color-bauhaus-black);
+  border-color: var(--color-accent);
 }
 
-/* Secondary button */
+.btn-primary:active {
+  transform: translate(6px, 6px);
+  box-shadow: none;
+}
+
+/* Secondary button - MUSEUM BAUHAUS STYLE */
 .btn-secondary {
-  background-color: var(--color-secondary);
+  background-color: var(--color-bauhaus-white);
+  color: var(--color-primary);
+  border-color: var(--color-primary);
+  border-width: 3px;
+  box-shadow: 5px 5px 0 var(--color-primary);
+  transition: all var(--transition-bauhaus);
+}
+
+.btn-secondary:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 3px 3px 0 var(--color-primary);
+  background-color: var(--color-primary);
   color: var(--color-bauhaus-white);
-  border-color: var(--color-secondary);
+}
+
+.btn-secondary:active {
+  transform: translate(5px, 5px);
+  box-shadow: none;
 }
 
 .btn-secondary::before {
@@ -184,7 +207,7 @@
 }
 
 /* Responsive buttons */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .btn {
     width: 100%;
     justify-content: center;

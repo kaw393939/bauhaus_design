@@ -67,53 +67,58 @@
   border-color: transparent var(--color-primary) transparent transparent;
 }
 
-/* Floating background elements */
+/* Floating background elements - MUSEUM QUALITY BAUHAUS
+   Following Kandinsky's color-form associations:
+   Blue → Circle (infinite, spiritual)
+   Red → Square (stable, grounded)
+   Yellow → Triangle (sharp, radiating) */
+
 .bg-circle {
   position: absolute;
   border-radius: 50%;
-  opacity: 0.1;
 }
 
-.bg-circle--red {
-  background-color: var(--color-bauhaus-red);
-  width: 350px;
-  height: 350px;
-  top: 10%;           /* Bauhaus asymmetry: more visible positioning */
-  right: 8%;          /* Strategic placement for dynamic balance */
-  opacity: 0.08;      /* More visible for Bauhaus boldness */
+.bg-circle--blue {
+  background-color: var(--color-bauhaus-blue);
+  width: 400px;
+  height: 400px;
+  top: 15%;           /* Bauhaus intentional asymmetry */
+  right: 5%;          /* Bold positioning for visual impact */
+  opacity: 0.12;      /* BOLDER for museum-quality presence */
   animation: float 20s ease-in-out infinite;
+  mix-blend-mode: multiply;  /* Authentic Bauhaus layering */
 }
 
 .bg-square {
   position: absolute;
-  opacity: 0.08;
 }
 
-.bg-square--blue {
-  background-color: var(--color-bauhaus-blue);
-  width: 250px;
-  height: 250px;
-  bottom: 20%;
-  left: 5%;           /* Bauhaus functional positioning */
-  opacity: 0.06;      /* More visible for dynamic balance */
+.bg-square--red {
+  background-color: var(--color-bauhaus-red);
+  width: 300px;
+  height: 300px;
+  bottom: 25%;
+  left: 3%;           /* Bauhaus functional positioning */
+  opacity: 0.10;      /* BOLDER for dynamic balance */
   animation: rotate 30s linear infinite;
+  mix-blend-mode: multiply;  /* Authentic Bauhaus layering */
 }
 
 .bg-triangle {
   position: absolute;
-  opacity: 0.06;
 }
 
 .bg-triangle--yellow {
   width: 0;
   height: 0;
   border-style: solid;
-  border-width: 0 125px 216.5px 125px;
+  border-width: 0 150px 260px 150px;  /* Larger for impact */
   border-color: transparent transparent var(--color-bauhaus-yellow) transparent;
-  top: 60%;
-  right: 15%;         /* Bauhaus strategic positioning for balance */
-  opacity: 0.05;      /* More visible yellow accent */
+  top: 55%;
+  right: 12%;         /* Bauhaus strategic positioning */
+  opacity: 0.08;      /* BOLDER yellow accent for vibrancy */
   animation: pulse 15s ease-in-out infinite;
+  mix-blend-mode: multiply;  /* Authentic Bauhaus layering */
 }
 
 /* Geometric frames for images */
@@ -287,8 +292,8 @@
 }
 
 /* Responsive adjustments */
-@media (max-width: 768px) {
-  .bg-circle--red {
+@media (max-width: 767px) {
+  .bg-circle--blue {
     width: 200px;
     height: 200px;
     top: 5%;  /* Move higher to avoid text overlap */
@@ -296,7 +301,7 @@
     opacity: 0.04;  /* Much more subtle on mobile */
   }
 
-  .bg-square--blue {
+  .bg-square--red {
     width: 150px;
     height: 150px;
     bottom: 30%;  /* Better positioning */

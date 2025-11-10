@@ -6,6 +6,9 @@
 /* Design Tokens & Variables */
 @import url('./variables.css');
 
+/* Typography System */
+@import url('./typography.css');
+
 /* Reset & Base */
 @import url('./reset.css');
 @import url('./base.css');
@@ -14,373 +17,47 @@
 @import url('./layout.css');
 
 /* Components */
+@import url('./components/hero.css');
+@import url('./components/sections.css');
 @import url('./components/buttons.css');
 @import url('./components/cards.css');
 @import url('./components/navigation.css');
 @import url('./components/geometric.css');
 @import url('./components/footer.css');
 @import url('./components/forms.css');
+@import url('./components/color-theory.css');
 
 /* Animations */
 @import url('./animations.css');
 
-/* ========================================
-   HERO SECTION
-   ======================================== */
-
-.hero {
-  position: relative;
-  padding: var(--spacing-xl) 0;  /* Bauhaus efficiency: reduced to xl (32px) for tighter spacing */
-  background: linear-gradient(
-    135deg,
-    var(--color-bg) 0%,
-    var(--color-bg-alt) 100%
-  );
-  overflow: hidden;
-}
-
-.hero-content {
-  position: relative;
-  z-index: 1;
-  max-width: 900px;
-  margin: 0 auto;
-  text-align: left;  /* Bauhaus asymmetry: left-aligned instead of center */
-}
-
-.hero-title {
-  font-size: var(--font-size-6xl);  /* Bauhaus boldness: increased for dramatic hierarchy */
-  font-weight: var(--font-weight-black);
-  line-height: var(--line-height-tight);
-  margin-bottom: var(--spacing-sm);  /* Tighter spacing for efficiency */
-  letter-spacing: var(--letter-spacing-tight);
-  text-transform: uppercase;  /* Bauhaus geometric typography */
-}
-
-.hero-title .highlight {
-  color: var(--color-primary);
-  position: relative;
-  display: inline-block;
-}
-
-.hero-title .highlight::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-  height: 8px;
-  background-color: var(--color-accent);
-  z-index: -1;
-}
-
-.hero-subtitle {
-  font-size: var(--font-size-sm);  /* Bauhaus contrast: much smaller for hierarchy */
-  font-weight: var(--font-weight-medium);
-  color: var(--color-text-light);
-  margin-bottom: var(--spacing-lg);  /* Spacing for CTA buttons */
-  text-transform: uppercase;
-  letter-spacing: 3px;  /* Bauhaus wide letter spacing */
-}
-
-.hero-description {
-  font-size: var(--font-size-lg);  /* Reduced from xl for better readability */
-  line-height: 1.6;  /* Reduced from relaxed (1.75) for efficiency */
-  color: var(--color-text-light);
-  max-width: 700px;
-  margin: 0 auto var(--spacing-xl);  /* Reduced from 2xl */
-}
-
-.hero-actions {
-  display: flex;
-  gap: var(--spacing-md);
-  justify-content: flex-start;  /* Bauhaus asymmetry: left-aligned buttons */
-  flex-wrap: wrap;
-}
+/* Print Styles */
+@import url('./print.css');
 
 /* ========================================
-   GEOMETRIC DECORATION IN HERO
+   HERO & SECTION STYLES
+   Moved to dedicated component files:
+   - components/hero.css
+   - components/sections.css
    ======================================== */
 
-.geometric-decoration {
-  position: absolute;
-  top: 15%;
-  right: 10%;
-  z-index: 0;
-  pointer-events: none;
-}
+/* Hero styles moved to components/hero.css */
 
-.geometric-decoration .shape {
-  position: absolute;
-  opacity: 0.15;  /* Bauhaus functional visibility */
-}
+/* Geometric decoration styles moved to components/hero.css */
 
-.geometric-decoration .shape--circle {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  background-color: var(--color-bauhaus-red);
-  top: 0;
-  right: 0;
-  animation: float 8s ease-in-out infinite;
-}
+/* Page header styles moved to components/sections.css */
 
-.geometric-decoration .shape--square {
-  width: 80px;
-  height: 80px;
-  background-color: var(--color-bauhaus-blue);
-  top: 60px;
-  right: 140px;
-  animation: rotate 12s linear infinite;
-}
+/* Section header styles moved to components/sections.css */
 
-.geometric-decoration .shape--triangle {
-  width: 0;
-  height: 0;
-  border-style: solid;
-  border-width: 0 30px 52px 30px;
-  border-color: transparent transparent var(--color-bauhaus-yellow) transparent;
-  top: -20px;
-  right: 200px;
-  animation: pulse 10s ease-in-out infinite;
-}
+/* Project and blog section styles moved to components/sections.css */
 
-/* ========================================
-   PAGE HEADERS
-   ======================================== */
 
-.page-header {
-  padding: var(--spacing-lg) 0 var(--spacing-sm);  /* Bauhaus efficiency: further reduced spacing */
-  text-align: center;
-}
-
-.page-title {
-  font-size: var(--font-size-3xl);  /* Reduced from 4xl (40px) to 3xl (32px) for better proportion */
-  font-weight: var(--font-weight-black);
-  margin-bottom: var(--spacing-sm);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-tight);
-}
-
-.page-subtitle {
-  font-size: var(--font-size-lg);
-  color: var(--color-text-light);
-  max-width: 600px;
-  margin: 0 auto;
-}
-
-/* ========================================
-   SECTION HEADERS
-   ======================================== */
-
-.section-header {
-  text-align: center;
-  margin-bottom: var(--spacing-sm);  /* Bauhaus efficiency: further reduced to sm (8px) */
-}
-
-.section-title {
-  font-size: var(--font-size-2xl);  /* Further reduced: 32px */
-  font-weight: var(--font-weight-black);
-  margin-bottom: var(--spacing-sm);
-  text-transform: uppercase;
-  letter-spacing: var(--letter-spacing-tight);
-  position: relative;
-  display: inline-block;
-}
-
-.section-title::after {
-  content: '';
-  position: absolute;
-  bottom: -6px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 50px;  /* Smaller underline */
-  height: 3px;
-  background-color: var(--color-primary);
-}
-
-.section-subtitle {
-  font-size: var(--font-size-base);  /* Reduced from xl */
-  color: var(--color-text-light);
-  max-width: 600px;
-  margin: var(--spacing-md) auto 0;  /* Reduced from lg */
-}
-
-/* ========================================
-   PROJECT SHOWCASE
-   ======================================== */
-
-.projects-section {
-  padding: var(--spacing-2xl) 0;  /* Reduced from 4xl (96px) to 2xl (48px) */
-}
-
-.projects-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-  gap: var(--spacing-md);  /* Reduced from 2xl (48px) to md (16px) for better density */
-  margin-bottom: var(--spacing-lg);  /* Reduced from 2xl (48px) to lg (24px) */
-}
-
-/* ========================================
-   BLOG SECTION
-   ======================================== */
-
-.blog-section {
-  padding: var(--spacing-2xl) 0;  /* Reduced from 4xl (96px) to 2xl (48px) */
-  background-color: var(--color-bg-alt);
-}
-
-.posts-list {
-  display: grid;
-  gap: var(--spacing-xl);
-  max-width: 900px;
-  margin: 0 auto;
-}
-
-/* ========================================
-   CTA SECTION - OPTIMIZED SPACING
-   ======================================== */
-
-.cta,
-.cta-section,
-.contact-cta {
-  padding: var(--spacing-xl) 0;  /* Reduced from 3xl (64px) to xl (32px) for efficiency */
-  text-align: center;
-  background: linear-gradient(
-    135deg,
-    var(--color-primary) 0%,
-    var(--color-primary-dark) 100%
-  );
-  color: var(--color-bauhaus-white);
-  position: relative;
-  overflow: hidden;
-}
-
-.cta-content {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-  z-index: 1;
-}
-
-.cta-title {
-  font-size: var(--font-size-3xl);  /* Reduced from 5xl */
-  color: var(--color-bauhaus-white);
-  margin-bottom: var(--spacing-md);  /* Reduced from lg */
-}
-
-.cta-text {
-  font-size: var(--font-size-lg);  /* Reduced from xl */
-  color: var(--color-concrete);
-  max-width: 600px;
-  margin: 0 auto var(--spacing-lg);  /* Reduced from xl */
-  line-height: 1.6;
-}
-
-.cta-actions {
-  display: flex;
-  gap: var(--spacing-md);
-  justify-content: center;
-  flex-wrap: wrap;
-}
 
 /* ========================================
    RESPONSIVE DESIGN
+   Component-specific responsive styles moved to:
+   - Hero responsive: components/hero.css
+   - Section responsive: components/sections.css
+   - Navigation responsive: components/navigation.css
+   - Card responsive: components/cards.css
+   - Form responsive: components/forms.css
    ======================================== */
-
-/* Tablet adjustments: 768px - 1023px */
-@media (min-width: 768px) and (max-width: 1023px) {
-  .hero-title {
-    font-size: var(--font-size-4xl);  /* Slightly smaller for tablet */
-  }
-}
-
-/* Mobile adjustments: Below 768px */
-@media (max-width: 767px) {
-  .hero {
-    padding: var(--spacing-lg) 0;  /* Better mobile spacing */
-  }
-
-  .hero-content {
-    padding: 0 var(--spacing-md);  /* Add horizontal padding */
-    max-width: 100%;  /* Full width on mobile */
-  }
-
-  .hero-title {
-    font-size: var(--font-size-3xl);  /* Much smaller on mobile */
-    line-height: 1.1;  /* Tighter line height to prevent awkward breaks */
-    word-break: keep-all;  /* Prevent awkward word breaks */
-  }
-
-  .hero-subtitle {
-    font-size: var(--font-size-lg);  /* Reduced subtitle */
-  }
-
-  .hero-description {
-    font-size: var(--font-size-base);  /* Standard text size */
-  }
-
-  .hero-actions {
-    flex-direction: column;
-    align-items: center;  /* Center buttons on mobile */
-    gap: var(--spacing-md);  /* Better spacing between buttons */
-    margin-top: var(--spacing-xl);  /* More space from subtitle */
-  }
-
-  .hero-actions .btn {
-    min-width: 200px;  /* Better button width */
-    padding: var(--spacing-md) var(--spacing-xl);  /* Better touch targets */
-  }
-
-  .page-title {
-    font-size: var(--font-size-3xl);  /* Smaller page titles */
-  }
-
-  .section-title {
-    font-size: var(--font-size-2xl);  /* Smaller section titles */
-    margin-bottom: var(--spacing-md);  /* Better spacing */
-  }
-
-  .section-header {
-    margin-bottom: var(--spacing-lg);  /* More space on mobile */
-    padding: 0 var(--spacing-sm);  /* Add padding */
-  }
-
-  .cta-title {
-    font-size: var(--font-size-2xl);  /* Smaller CTA */
-  }
-  
-  /* Tighter spacing on mobile */
-  .card-title {
-    font-size: var(--font-size-lg);
-  }
-  
-  .section-header {
-    margin-bottom: var(--spacing-lg);
-  }
-}
-
-/* Small mobile: Below 480px */
-@media (max-width: 479px) {
-  .hero-title {
-    font-size: var(--font-size-2xl);  /* Very compact on small screens */
-    word-break: normal;  /* Allow natural breaks on very small screens */
-  }
-
-  .section-title {
-    font-size: var(--font-size-xl);  /* Even smaller on tiny screens */
-  }
-  
-  .container {
-    padding-left: var(--spacing-sm);  /* Keep reasonable padding */
-    padding-right: var(--spacing-sm);
-  }
-
-  .hero-content {
-    padding: 0 var(--spacing-sm);  /* Tighter hero padding */
-  }
-
-  .hero-actions .btn {
-    min-width: 180px;  /* Slightly smaller buttons */
-    font-size: var(--font-size-sm);  /* Smaller button text */
-  }
-}

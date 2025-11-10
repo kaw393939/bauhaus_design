@@ -40,6 +40,12 @@
   --color-text-light: var(--color-steel);
   --color-text-muted: #9ca3af;
   --color-text-inverse: var(--color-bauhaus-white);
+  --color-text-secondary: #6b7280;
+  
+  /* Link Colors - MOMA FIX: WCAG AAA compliant (7:1 contrast) */
+  --color-link: #003d7a;  /* Darker blue for AAA compliance */
+  --color-link-hover: #004f9f;  /* Brighter on hover */
+  --color-link-visited: #5b21b6;  /* Distinct visited state */
   
   /* Background Colors */
   --color-bg: var(--color-bauhaus-white);
@@ -67,18 +73,7 @@
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   --font-mono: 'IBM Plex Mono', 'SF Mono', 'Monaco', 'Courier New', monospace;
   
-  /* Font Sizes - Modular Scale (1.25 - Major Third) */
-  --font-size-xs: 0.75rem;      /* 12px */
-  --font-size-sm: 0.875rem;     /* 14px */
-  --font-size-base: 1rem;       /* 16px */
-  --font-size-lg: 1.125rem;     /* 18px */
-  --font-size-xl: 1.25rem;      /* 20px */
-  --font-size-2xl: 1.5rem;      /* 24px */
-  --font-size-3xl: 2rem;        /* 32px */
-  --font-size-4xl: 2.5rem;      /* 40px */
-  --font-size-5xl: 3.5rem;      /* 56px */
-  --font-size-6xl: 4.5rem;      /* 72px */
-  --font-size-7xl: 6rem;        /* 96px */
+  /* Legacy font sizes removed - now using Fortune 100 typography system in typography.css */
   
   /* Font Weights */
   --font-weight-light: 300;
@@ -191,14 +186,16 @@
 
   /* ========================================
      TRANSITIONS & ANIMATIONS
+     MOMA FIX: Bauhaus mechanical easing for machine-age precision
      ======================================== */
   
-  /* Timing Functions */
+  /* Timing Functions - Bauhaus Mechanical Easing */
   --ease-linear: linear;
+  --ease-bauhaus-mechanical: cubic-bezier(0.4, 0.0, 0.2, 1);  /* Primary Bauhaus easing */
   --ease-in: cubic-bezier(0.4, 0, 1, 1);
   --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
-  --ease-bauhaus: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);  /* Same as mechanical */
+  --ease-bauhaus: cubic-bezier(0.4, 0.0, 0.2, 1);  /* Mechanical precision */
   
   /* Duration */
   --duration-instant: 0ms;
@@ -207,11 +204,11 @@
   --duration-slow: 350ms;
   --duration-slower: 500ms;
   
-  /* Transitions */
-  --transition-fast: var(--duration-fast) var(--ease-out);
-  --transition-base: var(--duration-base) var(--ease-in-out);
-  --transition-slow: var(--duration-slow) var(--ease-in-out);
-  --transition-bauhaus: var(--duration-base) var(--ease-bauhaus);
+  /* Transitions - All using Bauhaus mechanical easing */
+  --transition-fast: var(--duration-fast) var(--ease-bauhaus-mechanical);
+  --transition-base: var(--duration-base) var(--ease-bauhaus-mechanical);
+  --transition-slow: var(--duration-slow) var(--ease-bauhaus-mechanical);
+  --transition-bauhaus: var(--duration-base) var(--ease-bauhaus-mechanical);
 
   /* ========================================
      Z-INDEX SCALE
@@ -255,13 +252,9 @@
    RESPONSIVE ADJUSTMENTS
    ======================================== */
 
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   :root {
-    /* Reduce font sizes on mobile */
-    --font-size-4xl: 2rem;       /* 32px */
-    --font-size-5xl: 2.5rem;     /* 40px */
-    --font-size-6xl: 3rem;       /* 48px */
-    --font-size-7xl: 3.5rem;     /* 56px */
+    /* Legacy mobile font overrides removed - handled by Fortune 100 clamp() system */
     
     /* Reduce spacing on mobile */
     --spacing-3xl: 3rem;         /* 48px */

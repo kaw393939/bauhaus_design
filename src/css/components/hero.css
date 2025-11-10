@@ -1,0 +1,231 @@
+/* ========================================
+   HERO COMPONENT
+   Main hero section with Fortune 100 typography
+   ======================================== */
+
+/* Hero Section */
+.hero {
+  min-height: 70vh;  /* Bauhaus efficiency: reduced from 100vh to 70vh for content prioritization */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--spacing-xl) 0;  /* Bauhaus efficiency: reduced to xl (32px) for tighter spacing */
+  background: var(--color-bg);
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  max-width: var(--container-max-width-narrow);  /* Bauhaus focus: narrower for better readability */
+  margin: 0 auto;
+  text-align: left;  /* Bauhaus asymmetry: left-aligned instead of center */
+  position: relative;
+  z-index: 1;
+}
+
+.hero-title {
+  /* Fortune 100 Typography: Fluid responsive display type - MUSEUM QUALITY */
+  font-size: var(--font-size-display-lg);
+  font-weight: var(--font-weight-black);
+  line-height: var(--line-height-display);
+  margin-bottom: clamp(0.5rem, 2vw, 1rem);
+  letter-spacing: var(--letter-spacing-display);
+  text-transform: uppercase;  /* Bauhaus geometric typography */
+  font-family: var(--font-display);
+  /* MOMA FIX: Remove gradient for legibility - use solid color */
+  color: var(--color-text);
+  position: relative;
+}
+
+/* Bauhaus accent line - enhanced tricolor bar */
+.hero-title::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: -16px;
+  width: 160px;
+  height: 8px;
+  background: linear-gradient(
+    to right,
+    var(--color-bauhaus-red) 0%,
+    var(--color-bauhaus-red) 33%,
+    var(--color-bauhaus-blue) 33%,
+    var(--color-bauhaus-blue) 66%,
+    var(--color-bauhaus-yellow) 66%,
+    var(--color-bauhaus-yellow) 100%
+  );
+}
+
+.hero-subtitle {
+  /* Fortune 100 Typography: Responsive body large */
+  font-size: var(--font-size-body-lg);
+  font-weight: var(--font-weight-normal);
+  line-height: var(--line-height-body);
+  margin-bottom: clamp(1rem, 3vw, 1.5rem);
+  max-width: 40rem;
+  opacity: 0.9;
+  font-family: var(--font-body);
+}
+
+.hero-description {
+  /* Fortune 100 Typography: Body large for hero description */
+  font-size: var(--font-size-body-lg);
+  line-height: var(--line-height-body);
+  color: var(--color-text-light);
+  margin: 0 auto clamp(1rem, 3vw, 2rem);
+  font-family: var(--font-body);
+}
+
+.hero-actions {
+  display: flex;
+  gap: var(--spacing-md);
+  align-items: center;
+  justify-content: flex-start;  /* Bauhaus asymmetry: left-aligned buttons */
+}
+
+/* ========================================
+   GEOMETRIC DECORATION IN HERO - MUSEUM QUALITY
+   ======================================== */
+
+.geometric-decoration {
+  position: absolute;
+  top: 15%;  /* Optimized for visual balance */
+  right: 5%;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.geometric-decoration .shape {
+  position: absolute;
+  opacity: 0.15;  /* MOMA FIX: Increased from 0.2 for bolder museum presence */
+}
+
+.geometric-decoration .shape--circle {
+  width: 160px;
+  height: 160px;
+  border-radius: 50%;
+  background-color: var(--color-bauhaus-red);
+  top: 0;
+  right: 0;
+  animation: float 8s ease-in-out infinite, pulse-subtle 4s ease-in-out infinite;
+  box-shadow: 0 0 80px rgba(227, 30, 36, 0.3);  /* Bauhaus glow */
+}
+
+/* MOMA FIX: Add pulse animation for confident presence */
+@keyframes pulse-subtle {
+  0%, 100% { 
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% { 
+    opacity: 0.22;
+    transform: scale(1.05);
+  }
+}
+
+.geometric-decoration .shape--square {
+  width: 120px;
+  height: 120px;
+  background-color: var(--color-bauhaus-blue);
+  top: 100px;
+  right: 180px;
+  animation: rotate 12s linear infinite;
+  box-shadow: 0 0 60px rgba(0, 79, 159, 0.3);  /* Bauhaus glow */
+}
+
+.geometric-decoration .shape--triangle {
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 40px 70px 40px;  /* Larger for impact */
+  border-color: transparent transparent var(--color-bauhaus-yellow) transparent;
+  top: 50px;
+  right: 240px;
+  animation: pulse 10s ease-in-out infinite;
+  filter: drop-shadow(0 0 40px rgba(255, 209, 0, 0.4));  /* Bauhaus glow */
+}
+
+/* Additional geometric accents for depth */
+.geometric-decoration::before {
+  content: '';
+  position: absolute;
+  top: 150px;
+  right: 100px;
+  width: 60px;
+  height: 60px;
+  border: 4px solid var(--color-bauhaus-yellow);
+  border-radius: 50%;
+  opacity: 0.3;
+  animation: pulse 8s ease-in-out infinite reverse;
+}
+
+.geometric-decoration::after {
+  content: '';
+  position: absolute;
+  top: 200px;
+  right: 300px;
+  width: 80px;
+  height: 80px;
+  background: linear-gradient(
+    45deg,
+    var(--color-bauhaus-red) 0%,
+    transparent 50%,
+    var(--color-bauhaus-blue) 100%
+  );
+  opacity: 0.15;
+  animation: rotate 20s linear infinite reverse;
+}
+
+/* ========================================
+   RESPONSIVE HERO
+   ======================================== */
+
+/* Mobile adjustments: Below 768px */
+@media (max-width: 767px) {
+  .hero {
+    padding: var(--spacing-lg) 0;  /* Better mobile spacing */
+  }
+
+  .hero-content {
+    padding: 0 var(--spacing-md);  /* Add horizontal padding */
+    max-width: 100%;  /* Full width on mobile */
+  }
+
+  /* Hide geometric decoration on mobile to prevent overlap */
+  .geometric-decoration {
+    display: none;
+  }
+
+  /* Typography adjustments removed - handled by Fortune 100 clamp() system */
+
+  .hero-actions {
+    flex-direction: column;
+    align-items: center;  /* Center buttons on mobile */
+    gap: var(--spacing-md);  /* Better spacing between buttons */
+    margin-top: var(--spacing-xl);  /* More space from subtitle */
+  }
+
+  .hero-actions .btn {
+    min-width: 200px;  /* Better button width */
+    padding: var(--spacing-md) var(--spacing-xl);  /* Better touch targets */
+  }
+}
+
+/* Small mobile: Below 480px */
+@media (max-width: 479px) {
+  /* Typography sizing handled by Fortune 100 clamp() system */
+  
+  .container {
+    padding-left: var(--spacing-sm);  /* Keep reasonable padding */
+    padding-right: var(--spacing-sm);
+  }
+
+  .hero-content {
+    padding: 0 var(--spacing-sm);  /* Tighter hero padding */
+  }
+
+  .hero-actions .btn {
+    min-width: 180px;  /* Slightly smaller buttons */
+    /* Button text sizing handled by Fortune 100 button typography */
+  }
+}

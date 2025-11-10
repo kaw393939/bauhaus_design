@@ -58,86 +58,14 @@
   gap: var(--grid-gap);
 }
 
-/* Projects grid - specific layout for project cards */
+/* Projects grid - MUSEUM BAUHAUS: Asymmetric layout - MOMA FIX */
 .projects-grid {
   display: grid;
   grid-template-columns: 1fr;           /* Mobile: 1 column */
-  gap: var(--spacing-md);  /* Reduced from xl (32px) to md (16px) for better density */
-}
-
-/* Blog grid - specific layout for blog cards */
-.blog-grid {
-  display: grid;
-  grid-template-columns: 1fr;           /* Mobile: 1 column */
-  gap: var(--spacing-md);  /* Reduced from lg (24px) to md (16px) for better density */
-}
-
-/* Flex layouts */
-.flex {
-  display: flex;
-}
-
-.flex-center {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.flex-between {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-
-.flex-wrap {
-  flex-wrap: wrap;
-}
-
-.gap-sm {
-  gap: var(--spacing-sm);
-}
-
-.gap-md {
   gap: var(--spacing-md);
 }
 
-.gap-lg {
-  gap: var(--spacing-lg);
-}
-
-.gap-xl {
-  gap: var(--spacing-xl);
-}
-
-/* Section spacing - OPTIMIZED: Reduced for better content density */
-.section {
-  padding: var(--spacing-xl) 0;  /* Reduced from 2xl (48px) to xl (32px) for Fortune 100 efficiency */
-}
-
-.section-sm {
-  padding: var(--spacing-lg) 0;  /* Reduced from xl (32px) to lg (24px) */
-}
-
-.section-lg {
-  padding: var(--spacing-2xl) 0;  /* Reduced from 3xl (64px) to 2xl (48px) */
-}
-
-/* Main content */
-.main-content {
-  min-height: calc(100vh - 300px);
-  padding: var(--spacing-2xl) 0;
-}
-
-/* ========================================
-   RESPONSIVE GRID - Mobile-first breakpoints
-   ======================================== */
-
-/* Tablet: 768px+ (2 columns for most grids) */
+/* Tablet: 768px+ (2 columns with feature emphasis) */
 @media (min-width: 768px) {
   .grid-2,
   .grid--2-col,
@@ -151,13 +79,22 @@
     grid-template-columns: repeat(2, 1fr);
   }
   
-  .projects-grid,
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-lg);
+  }
+  
+  /* Feature first project on tablet */
+  .projects-grid > :first-child {
+    grid-column: span 2;
+  }
+  
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 }
 
-/* Desktop: 1024px+ (3 columns for grid-3) */
+/* Desktop: 1024px+ (3 columns with Bauhaus asymmetry) */
 @media (min-width: 1024px) {
   .grid-3,
   .grid--3-col {
@@ -168,13 +105,46 @@
     grid-template-columns: repeat(3, 1fr);
   }
   
+  /* MOMA FIX: Use 6-column grid for precise asymmetric control */
   .projects-grid {
-    grid-template-columns: repeat(3, 1fr);  /* 3 columns for projects */
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--spacing-xl);  /* More breathing room on desktop */
   }
   
-  /* Blog stays 2 columns for readability */
+  /* Bauhaus asymmetric emphasis pattern - every 3rd item gets different size */
+  .projects-grid > :nth-child(3n+1) {
+    grid-column: span 4;  /* Larger emphasis - 2/3 width */
+  }
+  
+  .projects-grid > :nth-child(3n+2) {
+    grid-column: span 2;  /* Smaller - 1/3 width */
+  }
+  
+  .projects-grid > :nth-child(3n+3) {
+    grid-column: span 3;  /* Medium - 1/2 width */
+  }
+  
+  /* Alternate pattern for visual variety starting at 7th item */
+  .projects-grid > :nth-child(n+7):nth-child(3n+1) {
+    grid-column: span 2;  /* Flip the pattern */
+  }
+  
+  .projects-grid > :nth-child(n+7):nth-child(3n+2) {
+    grid-column: span 4;
+  }
+  
+  /* Blog stays 2 columns with feature emphasis */
   .blog-grid {
     grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-xl);
+  }
+  
+  /* First blog post gets featured treatment */
+  .blog-grid > :first-child {
+    grid-column: span 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
   }
 }
 
@@ -182,6 +152,15 @@
 @media (min-width: 1440px) {
   .grid-4 {
     grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* MOMA FIX: Tablet blog grid optimization for reading (768-1023px) */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .blog-grid {
+    grid-template-columns: 1fr;  /* Single column for optimal reading */
+    max-width: 720px;  /* Optimal reading width (~75 characters) */
+    margin: 0 auto;
   }
 }
 

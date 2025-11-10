@@ -256,7 +256,8 @@ body.page-transitioning {
   color: white;
   border: none;
   border-radius: 0;
-  font-size: var(--font-size-xl);
+  /* Fortune 100 Typography: H5 for back-to-top button */
+  font-size: var(--font-size-h5);
   cursor: pointer;
   opacity: 0;
   visibility: hidden;
