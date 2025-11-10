@@ -37,9 +37,9 @@ jobs:
       
       - name: Configure for GitHub Pages
         run: |
-          echo "Configuring for GitHub Pages deployment"
+          echo "Configuring for GitHub Pages deployment with custom domain"
           echo "Repository: ${{ github.repository }}"
-          echo "Path prefix: /bauhaus_design"
+          echo "Custom domain: www.mywebclass.org"
       
       - name: Install dependencies
         run: npm ci
@@ -47,8 +47,8 @@ jobs:
       - name: Build site
         run: npm run build
         env:
-          # GitHub Pages path prefix
-          PATH_PREFIX: '/bauhaus_design'
+          # No path prefix needed for custom domain
+          PATH_PREFIX: '/'
       
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3

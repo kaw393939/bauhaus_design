@@ -175,7 +175,7 @@ export default async function (eleventyConfig) {
     dataTemplateEngine: 'njk',
     
     // Path prefix for GitHub Pages
-    pathPrefix: process.env.PATH_PREFIX || '/bauhaus_design/',
+    pathPrefix: process.env.PATH_PREFIX || '/',
     
     // Server configuration
     serverOptions: {
