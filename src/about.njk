@@ -1,249 +1,264 @@
 ---
 layout: base.njk
-title: About the Movement
-description: Explore the history, philosophy, and enduring legacy of the Bauhaus school—the revolutionary design movement that transformed modern aesthetics.
+title: About Me
+description: Discover my design philosophy, creative approach, and the principles that guide my work in modern web design and digital experiences.
 ---
 
-<section class="about-hero">
+<section class="hero-section">
     <div class="container">
-        <div class="geometric-decoration" aria-hidden="true">
-            <div class="shape shape--circle shape--animate"></div>
-            <div class="shape shape--square shape--animate"></div>
-            <div class="shape shape--triangle shape--animate"></div>
+        <div class="hero-content">
+            <h1 class="hero-title">Creative Designer & Developer</h1>
+            <p class="hero-subtitle">
+                Building beautiful, functional digital experiences with modern design principles and clean code
+            </p>
+            <div class="hero-cta">
+                <a href="{{ '/projects/' | baseUrl }}" class="btn btn--primary btn--lg">
+                    View My Work
+                    <span aria-hidden="true">→</span>
+                </a>
+                <a href="{{ '#philosophy' | baseUrl }}" class="btn btn--outline btn--lg">
+                    Learn More
+                </a>
+            </div>
         </div>
         
-        <h1 class="page-title">The Bauhaus Movement</h1>
-        <p class="page-subtitle">
-            1919-1933: Fourteen Years That Changed Design Forever
-        </p>
+        <div class="hero-visual" aria-hidden="true">
+            <div class="floating-shape shape-01"></div>
+            <div class="floating-shape shape-02"></div>
+            <div class="floating-shape shape-03"></div>
+        </div>
     </div>
 </section>
 
-<!-- Bio Section - TWO COLUMN LAYOUT for better space utilization -->
-<section class="bio-section section">
+<!-- About Section -->
+<section class="about-section section" id="philosophy">
     <div class="container">
-        <div class="bio-layout">
-            <div class="bio-content">
-                <h2 class="section-title">The Revolutionary School</h2>
+        <div class="about-grid">
+            <div class="about-content">
+                <h2 class="section-title">Who I Am</h2>
                 <p class="lead">
-                    The Bauhaus (German for "building house") was founded in 1919 by architect Walter Gropius in Weimar, Germany. It became the most influential modernist art school of the 20th century.
+                    I'm a passionate designer and developer dedicated to creating digital experiences that are both beautiful and functional.
                 </p>
                 <p>
-                    In a radical departure from traditional art education, the Bauhaus rejected the divide between fine art and applied crafts. Students learned painting, sculpture, and architecture alongside carpentry, metalwork, and typography. This integration of theory and practice created a new model for design education.
+                    My design philosophy is rooted in simplicity, clarity, and purpose. I believe that great design solves problems elegantly, respects user needs, and celebrates clean aesthetics. Every pixel, every line of code exists for a reason.
                 </p>
                 <p>
-                    The school's philosophy was revolutionary: beauty and utility are inseparable. Every object, from a teacup to a building, should be designed with both aesthetic integrity and functional purpose. This principle—"form follows function"—became the foundation of modern design.
+                    With experience spanning web design, UI/UX, and frontend development, I bridge the gap between visual design and technical implementation. I'm obsessed with details—from typography and color harmony to performance optimization and accessibility.
                 </p>
                 <p>
-                    Despite its brief existence (closed by the Nazi regime in 1933), the Bauhaus shaped modern architecture, graphic design, industrial design, and typography. Its influence extends from the International Style skyscrapers to contemporary minimalist aesthetics.
+                    When I'm not designing or coding, you'll find me exploring new design trends, contributing to open-source projects, or sharing knowledge with the design community.
                 </p>
             </div>
             
-            <div class="bio-sidebar">
-                <div class="info-card">
-                    <h3 class="info-card-title">Historical Timeline</h3>
-                    <ul class="info-list">
-                        <li>
-                            <span class="info-label">Founded</span>
-                            <span class="info-value">1919, Weimar</span>
-                        </li>
-                        <li>
-                            <span class="info-label">Relocated</span>
-                            <span class="info-value">1925, Dessau</span>
-                        </li>
-                        <li>
-                            <span class="info-label">Final Location</span>
-                            <span class="info-value">1932, Berlin</span>
-                        </li>
-                        <li>
-                            <span class="info-label">Closed</span>
-                            <span class="info-value">1933, Nazi Pressure</span>
-                        </li>
-                    </ul>
+            <div class="about-stats">
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Projects Completed</div>
                 </div>
                 
-                <div class="info-card">
-                    <h3 class="info-card-title">Key Figures</h3>
-                    <div class="skill-tags">
-                        <span class="skill-tag">Walter Gropius</span>
-                        <span class="skill-tag">László Moholy-Nagy</span>
-                        <span class="skill-tag">Josef Albers</span>
-                        <span class="skill-tag">Paul Klee</span>
-                        <span class="skill-tag">Wassily Kandinsky</span>
-                        <span class="skill-tag">Ludwig Mies van der Rohe</span>
-                    </div>
+                <div class="stat-card">
+                    <div class="stat-number">8+</div>
+                    <div class="stat-label">Years Experience</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Client Satisfaction</div>
+                </div>
+                
+                <div class="stat-card">
+                    <div class="stat-number">20+</div>
+                    <div class="stat-label">Happy Clients</div>
                 </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Skills & Technologies Section -->
+<!-- Skills Section -->
 <section class="skills-section section section--alt">
     <div class="container">
         <div class="section-header">
-            <h2 class="section-title">Design Disciplines</h2>
+            <h2 class="section-title">What I Do</h2>
             <p class="section-subtitle">
-                The comprehensive curriculum that defined modernist education
+                A comprehensive set of skills to bring your vision to life
             </p>
         </div>
         
-        <div class="skills-grid">
-            <!-- Architecture -->
-            <div class="skill-category">
-                <div class="skill-icon" aria-hidden="true">
-                    <div class="geometric-icon geometric-icon--square"></div>
+        <div class="skills-showcase">
+            <!-- Design -->
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <div class="skill-icon design-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="3" width="18" height="18" rx="2"/>
+                            <path d="M9 11l3 3L22 4"/>
+                        </svg>
+                    </div>
                 </div>
-                <h3 class="skill-title">Architecture & Spatial Design</h3>
-                <ul class="skill-list">
-                    <li>Functionalist Building Design</li>
-                    <li>International Style Principles</li>
-                    <li>Steel & Glass Construction</li>
-                    <li>Open Floor Plans</li>
-                    <li>Flat Roofs & Clean Lines</li>
-                    <li>Industrial Aesthetics</li>
+                <h3 class="skill-card-title">UI/UX Design</h3>
+                <p class="skill-card-desc">
+                    User-centered design that balances aesthetics with usability
+                </p>
+                <ul class="skill-items">
+                    <li>Wireframing & Prototyping</li>
+                    <li>User Research</li>
+                    <li>Interface Design</li>
+                    <li>Design Systems</li>
                 </ul>
             </div>
             
-            <!-- Typography & Visual Communication -->
-            <div class="skill-category">
-                <div class="skill-icon" aria-hidden="true">
-                    <div class="geometric-icon geometric-icon--circle"></div>
+            <!-- Development -->
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <div class="skill-icon dev-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <polyline points="16 18 22 12 16 6"></polyline>
+                            <polyline points="8 6 2 12 8 18"></polyline>
+                        </svg>
+                    </div>
                 </div>
-                <h3 class="skill-title">Typography & Graphic Design</h3>
-                <ul class="skill-list">
-                    <li>Sans-Serif Type Systems</li>
-                    <li>Universal Typography</li>
-                    <li>Grid-Based Layouts</li>
-                    <li>Asymmetric Composition</li>
-                    <li>Primary Color Theory</li>
-                    <li>Photomontage Techniques</li>
+                <h3 class="skill-card-title">Web Development</h3>
+                <p class="skill-card-desc">
+                    Clean, modern code that performs beautifully across all devices
+                </p>
+                <ul class="skill-items">
+                    <li>HTML / CSS / JavaScript</li>
+                    <li>React & Modern Frameworks</li>
+                    <li>Responsive Design</li>
+                    <li>Performance Optimization</li>
                 </ul>
             </div>
             
-            <!-- Product & Industrial Design -->
-            <div class="skill-category">
-                <div class="skill-icon" aria-hidden="true">
-                    <div class="geometric-icon geometric-icon--triangle"></div>
+            <!-- Branding -->
+            <div class="skill-card">
+                <div class="skill-icon-wrapper">
+                    <div class="skill-icon brand-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="1"></circle>
+                            <path d="M12 1v6m0 6v6M4.22 4.22l4.24 4.24m5.08 5.08l4.24 4.24M1 12h6m6 0h6M4.22 19.78l4.24-4.24m5.08-5.08l4.24-4.24"></path>
+                        </svg>
+                    </div>
                 </div>
-                <h3 class="skill-title">Furniture & Industrial Design</h3>
-                <ul class="skill-list">
-                    <li>Tubular Steel Furniture</li>
-                    <li>Mass Production Methods</li>
-                    <li>Functional Aesthetics</li>
-                    <li>Material Innovation</li>
-                    <li>Modular Design Systems</li>
-                    <li>Machine-Age Craftsmanship</li>
+                <h3 class="skill-card-title">Branding & Identity</h3>
+                <p class="skill-card-desc">
+                    Memorable visual identities that tell your brand story
+                </p>
+                <ul class="skill-items">
+                    <li>Logo Design</li>
+                    <li>Brand Guidelines</li>
+                    <li>Visual Identity</li>
+                    <li>Typography</li>
                 </ul>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Three Locations Timeline -->
-<section class="experience-section section">
+<!-- Core Values Section -->
+<section class="values-section section">
     <div class="container container--narrow">
-        <h2 class="section-title" style="margin-bottom: var(--spacing-lg);">Three Cities, One Vision</h2>
-        <p class="section-subtitle" style="margin-bottom: var(--spacing-xl);">
-            The school's evolution across Germany
-        </p>
+        <h2 class="section-title" style="text-align: center; margin-bottom: var(--spacing-3xl);">Design Principles I Live By</h2>
         
-        <div class="timeline">
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <time class="timeline-date">1919 - 1925</time>
-                    <h3 class="timeline-title">Weimar Period</h3>
-                    <p class="timeline-company">The Founding Years</p>
-                    <p class="timeline-description">
-                        Walter Gropius established the school by merging the Weimar School of Applied Arts and the Academy of Fine Arts. The early curriculum emphasized craft workshops and experimental pedagogy, laying foundations for the movement's core philosophy.
-                    </p>
-                </div>
+        <div class="values-grid">
+            <div class="value-item">
+                <div class="value-number">01</div>
+                <h3 class="value-title">Simplicity First</h3>
+                <p class="value-text">
+                    Eliminate the unnecessary. Every element should have a purpose. When in doubt, simplify.
+                </p>
             </div>
             
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <time class="timeline-date">1925 - 1932</time>
-                    <h3 class="timeline-title">Dessau Period</h3>
-                    <p class="timeline-company">The Golden Age</p>
-                    <p class="timeline-description">
-                        Forced to relocate due to political pressure, the school moved to Dessau. This period saw its greatest achievements: the iconic Dessau building, revolutionary furniture designs, and the development of industrial design as a discipline. Masters like Moholy-Nagy and Kandinsky flourished here.
-                    </p>
-                </div>
+            <div class="value-item">
+                <div class="value-number">02</div>
+                <h3 class="value-title">User Focused</h3>
+                <p class="value-text">
+                    Design for real people. Understand their needs, behaviors, and pain points before designing.
+                </p>
             </div>
             
-            <div class="timeline-item">
-                <div class="timeline-marker"></div>
-                <div class="timeline-content">
-                    <time class="timeline-date">1932 - 1933</time>
-                    <h3 class="timeline-title">Berlin Period</h3>
-                    <p class="timeline-company">The Final Chapter</p>
-                    <p class="timeline-description">
-                        Under director Ludwig Mies van der Rohe, the school relocated to Berlin as a private institution. Rising Nazi persecution led to its closure in April 1933. Though brief, this period marked the internationalization of Bauhaus ideas as masters and students emigrated globally.
-                    </p>
-                </div>
+            <div class="value-item">
+                <div class="value-number">03</div>
+                <h3 class="value-title">Accessibility Matters</h3>
+                <p class="value-text">
+                    Good design is inclusive design. Build experiences everyone can use and enjoy.
+                </p>
+            </div>
+            
+            <div class="value-item">
+                <div class="value-number">04</div>
+                <h3 class="value-title">Performance Counts</h3>
+                <p class="value-text">
+                    Fast, responsive, and efficient. Technical excellence is as important as visual beauty.
+                </p>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Core Principles Section -->
-<section class="approach-section section section--alt">
+<!-- Experience Section -->
+<section class="experience-section section section--alt">
     <div class="container container--narrow">
-        <div class="section-header">
-            <h2 class="section-title">Core Principles</h2>
-        </div>
+        <h2 class="section-title" style="margin-bottom: var(--spacing-3xl);">Journey & Milestones</h2>
         
-        <div class="approach-grid">
-            <div class="approach-item">
-                <div class="approach-number">01</div>
-                <h3 class="approach-title">Form Follows Function</h3>
-                <p class="approach-description">
-                    Beauty emerges from utility. Every design element must serve a purpose, with no ornamental excess. The object's function dictates its form.
-                </p>
+        <div class="timeline-modern">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-year">2024</span>
+                    <h3 class="timeline-title">Senior Designer</h3>
+                    <p class="timeline-desc">
+                        Leading design initiatives and mentoring junior designers at a forward-thinking digital agency
+                    </p>
+                </div>
             </div>
             
-            <div class="approach-item">
-                <div class="approach-number">02</div>
-                <h3 class="approach-title">Truth to Materials</h3>
-                <p class="approach-description">
-                    Embrace materials' inherent properties. Steel looks like steel, glass like glass. No decorative disguises—let materials express their true nature.
-                </p>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-year">2022</span>
+                    <h3 class="timeline-title">Full-Stack Designer</h3>
+                    <p class="timeline-desc">
+                        Transitioned to full-stack role, combining design and development for cohesive digital products
+                    </p>
+                </div>
             </div>
             
-            <div class="approach-item">
-                <div class="approach-number">03</div>
-                <h3 class="approach-title">Unity of Arts</h3>
-                <p class="approach-description">
-                    No hierarchy between fine art and craft. Painters, sculptors, architects, and craftspeople collaborate as equals in creating total works of art.
-                </p>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-year">2020</span>
+                    <h3 class="timeline-title">UI/UX Designer</h3>
+                    <p class="timeline-desc">
+                        Started professional journey designing interfaces and experiences for web and mobile applications
+                    </p>
+                </div>
             </div>
             
-            <div class="approach-item">
-                <div class="approach-number">04</div>
-                <h3 class="approach-title">Social Reform Through Design</h3>
-                <p class="approach-description">
-                    Good design should be accessible to all, not just the elite. Mass production enables democratic access to well-designed, functional objects.
-                </p>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <span class="timeline-year">2018</span>
+                    <h3 class="timeline-title">Graphic Designer</h3>
+                    <p class="timeline-desc">
+                        First professional role creating visual content and brand materials for various clients
+                    </p>
+                </div>
             </div>
         </div>
     </div>
 </section>
 
-<!-- Global Legacy CTA Section -->
-<section class="cta-section section">
+<!-- CTA Section -->
+<section class="cta-final section">
     <div class="container">
-        <div class="cta-content">
-            <h2 class="cta-title">Enduring Global Legacy</h2>
-            <p class="cta-text">
-                From the skyscrapers of New York to the furniture in your home, Bauhaus principles continue to shape our visual world nearly a century later.
+        <div class="cta-box">
+            <h2 class="cta-title">Ready to Work Together?</h2>
+            <p class="cta-subtitle">
+                Let's create something amazing. Get in touch to discuss your next project.
             </p>
-            
-            <div class="cta-actions">
-                <a href="{{ '/projects/' | baseUrl }}" class="btn btn--accent btn--lg">
-                    Explore Bauhaus Principles
-                    <span aria-hidden="true">→</span>
+            <div class="cta-buttons">
+                <a href="{{ '/contact/' | baseUrl }}" class="btn btn--primary btn--lg">
+                    Start a Project
+                </a>
+                <a href="mailto:hello@example.com" class="btn btn--outline btn--lg">
+                    Send an Email
                 </a>
             </div>
         </div>
@@ -251,388 +266,454 @@ description: Explore the history, philosophy, and enduring legacy of the Bauhaus
 </section>
 
 <style>
-/* About Page Specific Styles */
+/* ========================================
+   ABOUT PAGE - FLAT MODERN DESIGN
+   ======================================== */
 
-/* Hero Section - COMPACT */
-.about-hero {
-    padding: var(--spacing-xl) 0 var(--spacing-md);
+/* Hero Section */
+.hero-section {
+    padding: var(--spacing-4xl) 0 var(--spacing-3xl);
     position: relative;
     overflow: hidden;
 }
 
-.about-hero .page-title {
-    font-size: var(--font-size-3xl);  /* 48px */
+.hero-section .container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4xl);
+    align-items: center;
+}
+
+.hero-content {
+    z-index: 2;
+}
+
+.hero-title {
+    font-size: clamp(2.5rem, 8vw, 4rem);
     font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: var(--spacing-md);
+    background: linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.hero-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-xl);
+    line-height: 1.6;
+    max-width: 500px;
+}
+
+.hero-cta {
+    display: flex;
+    gap: var(--spacing-md);
+    flex-wrap: wrap;
+}
+
+.hero-visual {
+    position: relative;
+    height: 400px;
+}
+
+.floating-shape {
+    position: absolute;
+    border-radius: 20px;
+    opacity: 0.8;
+    animation: float-up 4s ease-in-out infinite;
+}
+
+.shape-01 {
+    width: 120px;
+    height: 120px;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    top: 0;
+    left: 20%;
+    animation-delay: 0s;
+}
+
+.shape-02 {
+    width: 100px;
+    height: 100px;
+    background: linear-gradient(135deg, #ec4899, #f43f5e);
+    top: 150px;
+    right: 10%;
+    animation-delay: -1s;
+}
+
+.shape-03 {
+    width: 80px;
+    height: 80px;
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+    bottom: 20px;
+    left: 50%;
+    animation-delay: -2s;
+}
+
+@keyframes float-up {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-20px); }
+}
+
+/* About Section */
+.about-section {
+    padding: var(--spacing-4xl) 0;
+}
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-4xl);
+    align-items: start;
+}
+
+.about-content h2 {
+    font-size: 2.5rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.about-content .lead {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.8;
+}
+
+.about-content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: var(--spacing-md);
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--spacing-lg);
+}
+
+.stat-card {
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    padding: var(--spacing-xl);
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(99, 102, 241, 0.2);
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-4px);
+    border-color: rgba(99, 102, 241, 0.4);
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.15), rgba(139, 92, 246, 0.15));
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: 900;
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     margin-bottom: var(--spacing-xs);
 }
 
-.about-hero .page-subtitle {
-    font-size: var(--font-size-base);
-    color: var(--color-text-secondary);
-}
-
-/* Bio Section - TWO COLUMN LAYOUT */
-.bio-section {
-    padding: var(--spacing-2xl) 0;
-}
-
-.bio-layout {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-2xl);
-}
-
-@media (min-width: 1024px) {
-    .bio-layout {
-        grid-template-columns: 1.5fr 1fr;  /* 60/40 split */
-        gap: var(--spacing-3xl);
-    }
-}
-
-.bio-content .section-title {
-    font-size: var(--font-size-2xl);
-    margin-bottom: var(--spacing-md);
-}
-
-.bio-content .lead {
-    font-size: var(--font-size-lg);
+.stat-label {
+    font-size: 0.9rem;
+    color: var(--text-secondary);
     font-weight: 500;
-    line-height: 1.6;
-    margin-bottom: var(--spacing-md);
-    color: var(--color-text-secondary);
 }
 
-.bio-content p {
-    margin-bottom: var(--spacing-md);
-    line-height: 1.6;
+/* Skills Section */
+.skills-section {
+    padding: var(--spacing-4xl) 0;
 }
 
-/* Bio Sidebar */
-.bio-sidebar {
-    display: flex;
-    flex-direction: column;
+.section-header {
+    text-align: center;
+    margin-bottom: var(--spacing-4xl);
+}
+
+.section-title {
+    font-size: 2.5rem;
+    font-weight: 900;
+    margin-bottom: var(--spacing-md);
+}
+
+.section-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.skills-showcase {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: var(--spacing-xl);
 }
 
-.info-card {
-    background: var(--color-bg-alt);
-    border-left: 4px solid var(--color-primary);
+.skill-card {
+    background: var(--bg-surface);
     padding: var(--spacing-xl);
-    border-radius: 0;
+    border-radius: 12px;
+    border: 1px solid rgba(99, 102, 241, 0.1);
+    transition: all 0.3s ease;
 }
 
-.info-card-title {
-    font-size: var(--font-size-md);
+.skill-card:hover {
+    transform: translateY(-8px);
+    border-color: rgba(99, 102, 241, 0.3);
+    background: var(--bg-surface);
+    box-shadow: 0 12px 24px rgba(99, 102, 241, 0.1);
+}
+
+.skill-icon-wrapper {
+    margin-bottom: var(--spacing-lg);
+}
+
+.skill-icon {
+    width: 60px;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    color: white;
+    font-size: 1.5rem;
+}
+
+.design-icon {
+    background: linear-gradient(135deg, #6366f1, #8b5cf6);
+}
+
+.dev-icon {
+    background: linear-gradient(135deg, #06b6d4, #0891b2);
+}
+
+.brand-icon {
+    background: linear-gradient(135deg, #ec4899, #f43f5e);
+}
+
+.skill-icon svg {
+    width: 32px;
+    height: 32px;
+}
+
+.skill-card-title {
+    font-size: 1.25rem;
     font-weight: 700;
-    margin-bottom: var(--spacing-md);
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
+    margin-bottom: var(--spacing-sm);
 }
 
-.info-list {
+.skill-card-desc {
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-md);
+    line-height: 1.6;
+}
+
+.skill-items {
     list-style: none;
     padding: 0;
     margin: 0;
 }
 
-.info-list li {
-    display: flex;
-    justify-content: space-between;
-    align-items: baseline;
-    padding: var(--spacing-md) 0;
-    border-bottom: 1px solid var(--color-border);
-    gap: var(--spacing-md);
-}
-
-.info-list li:last-child {
-    border-bottom: none;
-}
-
-.info-label {
-    font-weight: 700;
-    color: var(--color-text);
-    font-size: var(--font-size-sm);
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-    white-space: nowrap;
-}
-
-.info-value {
-    color: var(--color-text-secondary);
-    font-size: var(--font-size-sm);
-    text-align: right;
-}
-
-.skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-sm);  /* FIXED: spacing-sm not space-sm */
-}
-
-.skill-tag {
-    display: inline-block;
-    padding: var(--spacing-xs) var(--spacing-md);  /* FIXED: spacing not space */
-    background: var(--color-primary);
-    color: white;
-    font-size: var(--font-size-xs);
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.1em;
-    border-radius: 0;
-    margin: 0;  /* Ensure no margin collapse */
-}
-
-/* Skills Grid - RESPONSIVE 3 COLUMN */
-.skills-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-xl);
-    margin-top: var(--spacing-xl);
-}
-
-@media (min-width: 768px) {
-    .skills-grid {
-        grid-template-columns: repeat(2, 1fr);
-    }
-}
-
-@media (min-width: 1024px) {
-    .skills-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: var(--spacing-2xl);
-    }
-}
-
-.skill-category {
-    padding: var(--spacing-lg);
-    background: var(--color-bg);
-    border-radius: 0;
-    border: none;  /* Remove full border */
-    border-left: 4px solid var(--color-border);  /* Bauhaus left accent */
-    transition: all var(--transition-base);
-}
-
-.skill-category:hover {
-    transform: translateY(-2px);
-    border-left-color: var(--color-primary);
-    border-left-width: 6px;
-    background: var(--color-bg-alt);
-}
-
-.skill-icon {
-    width: 50px;  /* Reduced from 60px */
-    height: 50px;
-    margin-bottom: var(--spacing-md);  /* Reduced spacing */
-}
-
-.geometric-icon {
-    width: 100%;
-    height: 100%;
-}
-
-.geometric-icon--circle {
-    border-radius: 50%;
-    background: var(--color-primary);
-}
-
-.geometric-icon--square {
-    background: var(--color-secondary);
-}
-
-.geometric-icon--triangle {
-    width: 0;
-    height: 0;
-    border-left: 30px solid transparent;
-    border-right: 30px solid transparent;
-    border-bottom: 60px solid var(--color-accent);
-}
-
-.skill-title {
-    font-size: var(--font-size-lg);  /* Reduced from xl */
-    font-weight: 700;
-    margin-bottom: var(--spacing-sm);  /* Tighter spacing */
-}
-
-.skill-list {
-    list-style: none;
-    padding: 0;
-}
-
-.skill-list li {
-    padding: var(--spacing-xs) 0;  /* More compact */
-    padding-left: var(--spacing-md);  /* Reduced indent */
+.skill-items li {
+    color: var(--text-secondary);
+    padding: var(--spacing-xs) 0;
+    padding-left: var(--spacing-md);
     position: relative;
-    line-height: 1.5;  /* Tighter line height */
-    font-size: var(--font-size-sm);  /* Smaller text for lists */
+    font-size: 0.9rem;
 }
 
-.skill-list li::before {
-    content: '→';
+.skill-items li::before {
+    content: '✓';
     position: absolute;
     left: 0;
-    color: var(--color-primary);
+    color: #6366f1;
+    font-weight: bold;
+}
+
+/* Values Section */
+.values-section {
+    padding: var(--spacing-4xl) 0;
+}
+
+.values-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--spacing-2xl);
+}
+
+.value-item {
+    padding: var(--spacing-xl);
+    background: var(--bg-surface);
+    border-radius: 12px;
+    border: 1px solid rgba(99, 102, 241, 0.1);
+}
+
+.value-number {
+    font-size: 3rem;
+    font-weight: 900;
+    color: rgba(99, 102, 241, 0.15);
+    line-height: 1;
+    margin-bottom: var(--spacing-md);
+}
+
+.value-title {
+    font-size: 1.25rem;
     font-weight: 700;
+    margin-bottom: var(--spacing-sm);
 }
 
-/* Timeline */
-.timeline {
+.value-text {
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Timeline Section */
+.experience-section {
+    padding: var(--spacing-4xl) 0;
+}
+
+.timeline-modern {
     position: relative;
-    padding-left: var(--spacing-2xl);
-    margin-top: 0;  /* Reduced from 2xl for tighter integration */
 }
 
-.timeline::before {
+.timeline-modern::before {
     content: '';
     position: absolute;
     left: 0;
     top: 0;
     bottom: 0;
     width: 2px;
-    background: var(--color-border);
+    background: linear-gradient(180deg, #6366f1 0%, transparent 100%);
 }
 
 .timeline-item {
     position: relative;
+    padding-left: var(--spacing-3xl);
     padding-bottom: var(--spacing-3xl);
 }
 
-.timeline-item:last-child {
-    padding-bottom: 0;
-}
-
-.timeline-marker {
+.timeline-item::before {
+    content: '';
     position: absolute;
-    left: calc(-1 * var(--spacing-2xl) - 6px);
+    left: -8px;
     top: 4px;
-    width: 14px;
-    height: 14px;
+    width: 16px;
+    height: 16px;
+    background: white;
+    border: 3px solid #6366f1;
     border-radius: 50%;
-    background: var(--color-primary);
-    border: 3px solid var(--color-background);
-    box-shadow: 0 0 0 2px var(--color-primary);
 }
 
-.timeline-date {
+.timeline-year {
     display: inline-block;
-    font-size: var(--font-size-sm);
-    font-weight: 600;
-    color: var(--color-primary);
+    font-size: 0.85rem;
+    font-weight: 700;
+    color: #6366f1;
     text-transform: uppercase;
     letter-spacing: 0.05em;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: var(--spacing-xs);
 }
 
 .timeline-title {
-    font-size: var(--font-size-xl);
+    font-size: 1.5rem;
     font-weight: 700;
     margin-bottom: var(--spacing-xs);
 }
 
-.timeline-company {
-    font-size: var(--font-size-md);
-    color: var(--color-text-secondary);
-    margin-bottom: var(--spacing-md);
+.timeline-desc {
+    color: var(--text-secondary);
+    line-height: 1.6;
 }
 
-.timeline-description {
-    line-height: 1.8;
-    color: var(--color-text-secondary);
+/* CTA Section */
+.cta-final {
+    padding: var(--spacing-4xl) 0;
+    background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+    border-radius: 16px;
+    margin: var(--spacing-3xl) 0;
 }
 
-/* Approach Grid - RESPONSIVE */
-.approach-grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-    margin-top: var(--spacing-xl);
+.cta-box {
+    text-align: center;
 }
 
-@media (min-width: 768px) {
-    .approach-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: var(--spacing-xl);
-    }
-}
-
-@media (min-width: 1024px) {
-    .approach-grid {
-        grid-template-columns: repeat(4, 1fr);
-        gap: var(--spacing-2xl);
-    }
-}
-
-.approach-item {
-    position: relative;
-    padding: var(--spacing-xl);
-}
-
-.approach-number {
-    font-size: var(--font-size-4xl);
+.cta-title {
+    font-size: 2.5rem;
     font-weight: 900;
-    color: var(--color-primary);
-    opacity: 0.2;
-    line-height: 1;
     margin-bottom: var(--spacing-md);
 }
 
-.approach-title {
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    margin-bottom: var(--spacing-md);
+.cta-subtitle {
+    font-size: 1.1rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--spacing-2xl);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.approach-description {
-    line-height: 1.8;
-    color: var(--color-text-secondary);
-}
-
-/* Social Links Large */
-.social-links-large {
+.cta-buttons {
     display: flex;
-    gap: var(--spacing-lg);
+    gap: var(--spacing-md);
     justify-content: center;
-    margin-top: var(--spacing-2xl);
-}
-
-.social-link-large {
-    width: 50px;
-    height: 50px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background: var(--color-surface-raised);
-    border-radius: var(--radius-md);
-    color: var(--color-text);
-    transition: all var(--transition-base);
-}
-
-.social-link-large:hover {
-    background: var(--color-primary);
-    color: white;
-    transform: translateY(-4px);
-}
-
-.social-link-large svg {
-    width: 24px;
-    height: 24px;
+    flex-wrap: wrap;
 }
 
 /* Responsive */
+@media (max-width: 1024px) {
+    .hero-section .container {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .hero-visual {
+        height: 300px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-2xl);
+    }
+
+    .values-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
 @media (max-width: 768px) {
-    .about-hero .page-title {
-        font-size: var(--font-size-4xl);
+    .hero-title {
+        font-size: 2rem;
     }
-    
-    .skills-grid {
+
+    .hero-cta {
+        flex-direction: column;
+    }
+
+    .section-title {
+        font-size: 1.75rem;
+    }
+
+    .skills-showcase {
         grid-template-columns: 1fr;
     }
-    
-    .timeline {
-        padding-left: var(--spacing-xl);
-    }
-    
-    .approach-grid {
+
+    .about-stats {
         grid-template-columns: 1fr;
+    }
+
+    .cta-title {
+        font-size: 1.75rem;
+    }
+}
+
+@media print {
+    .hero-visual,
+    .ambient-canvas {
+        display: none;
     }
 }
 </style>
