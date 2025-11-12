@@ -1,79 +1,114 @@
 /* ========================================
-   BAUHAUS REVIVAL - CSS CUSTOM PROPERTIES
-   Design Token System
+   MODERN FLAT DESIGN - CSS CUSTOM PROPERTIES
+   Professional & Endearing Design System
    ======================================== */
 
 :root {
   /* ========================================
-     BAUHAUS COLOR PALETTE
+     PROFESSIONAL COLOR PALETTE
+     Refined, trustworthy, with warm accents
      ======================================== */
   
-  /* Primary Bauhaus Colors */
-  --color-bauhaus-red: #e31e24;
-  --color-bauhaus-blue: #004f9f;
-  --color-bauhaus-yellow: #ffd100;
-  --color-bauhaus-black: #000000;
-  --color-bauhaus-white: #ffffff;
+  /* Core Brand Colors */
+  --color-brand-primary: #6366f1;        /* Indigo - professional, modern */
+  --color-brand-primary-light: #818cf8;  /* Soft indigo */
+  --color-brand-primary-dark: #4f46e5;   /* Deep indigo */
   
-  /* Neo-Modernist Neutrals */
-  --color-concrete: #f5f5f5;
-  --color-steel: #8e8e93;
-  --color-charcoal: #2c2c2c;
-  --color-aluminum: #e5e5e5;
-  --color-graphite: #4a4a4a;
+  --color-brand-secondary: #8b5cf6;      /* Violet - sophisticated */
+  --color-brand-secondary-light: #a78bfa;
+  --color-brand-secondary-dark: #7c3aed;
   
-  /* Semantic Color Assignments */
-  --color-primary: var(--color-bauhaus-blue);
-  --color-primary-light: #0066cc;
-  --color-primary-dark: #003d7a;
+  --color-brand-accent: #10b981;         /* Emerald green - warm, endearing */
+  --color-brand-accent-light: #34d399;   /* Bright emerald */
+  --color-brand-accent-dark: #059669;    /* Deep emerald */
   
-  --color-secondary: var(--color-bauhaus-red);
-  --color-secondary-light: #ff3339;
-  --color-secondary-dark: #b31519;
+  --color-brand-warmth: #f97316;         /* Soft orange - friendly, approachable */
+  --color-brand-warmth-light: #fb923c;
+  --color-brand-warmth-dark: #ea580c;
   
-  --color-accent: var(--color-bauhaus-yellow);
-  --color-accent-light: #ffdc33;
-  --color-accent-dark: #ccaa00;
+  /* Neutral Foundation */
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-slate-50: #f8fafc;
+  --color-slate-100: #f1f5f9;
+  --color-slate-200: #e2e8f0;
+  --color-slate-300: #cbd5e1;
+  --color-slate-400: #94a3b8;
+  --color-slate-500: #64748b;
+  --color-slate-600: #475569;
+  --color-slate-700: #334155;
+  --color-slate-800: #1e293b;
+  --color-slate-900: #0f172a;
   
-  /* Text Colors */
-  --color-text: var(--color-charcoal);
-  --color-text-light: var(--color-steel);
-  --color-text-muted: #9ca3af;
-  --color-text-inverse: var(--color-bauhaus-white);
-  --color-text-secondary: #6b7280;
+  /* Semantic Assignments */
+  --color-primary: var(--color-brand-primary);
+  --color-primary-light: var(--color-brand-primary-light);
+  --color-primary-dark: var(--color-brand-primary-dark);
   
-  /* Link Colors - MOMA FIX: WCAG AAA compliant (7:1 contrast) */
-  --color-link: #003d7a;  /* Darker blue for AAA compliance */
-  --color-link-hover: #004f9f;  /* Brighter on hover */
-  --color-link-visited: #5b21b6;  /* Distinct visited state */
+  --color-secondary: var(--color-brand-secondary);
+  --color-secondary-light: var(--color-brand-secondary-light);
+  --color-secondary-dark: var(--color-brand-secondary-dark);
+  
+  --color-accent: var(--color-brand-accent);
+  --color-accent-light: var(--color-brand-accent-light);
+  --color-accent-dark: var(--color-brand-accent-dark);
+  
+  --color-warmth: var(--color-brand-warmth);
+  --color-warmth-light: var(--color-brand-warmth-light);
+  --color-warmth-dark: var(--color-brand-warmth-dark);
+  
+  /* Text Colors - Professional hierarchy */
+  --color-text-primary: var(--color-slate-900);
+  --color-text-secondary: var(--color-slate-700);
+  --color-text-tertiary: var(--color-slate-600);
+  --color-text-muted: var(--color-slate-500);
+  --color-text-disabled: var(--color-slate-400);
+  --color-text-inverse: var(--color-white);
+  
+  /* Link Colors - WCAG AAA compliant */
+  --color-link: var(--color-brand-primary);
+  --color-link-hover: var(--color-brand-primary-dark);
+  --color-link-visited: var(--color-brand-secondary);
+  --color-link-active: var(--color-brand-primary-dark);
   
   /* Background Colors */
-  --color-bg: var(--color-bauhaus-white);
-  --color-bg-alt: var(--color-concrete);
-  --color-bg-dark: var(--color-charcoal);
-  --color-bg-geometric: var(--color-aluminum);
+  --color-bg-primary: var(--color-white);
+  --color-bg-secondary: var(--color-slate-50);
+  --color-bg-tertiary: var(--color-slate-100);
+  --color-bg-inverse: var(--color-slate-900);
+  --color-bg-overlay: rgba(0, 0, 0, 0.5);
   
   /* Border Colors */
-  --color-border: var(--color-aluminum);
-  --color-border-light: var(--color-concrete);
-  --color-border-dark: var(--color-charcoal);
+  --color-border-light: var(--color-slate-200);
+  --color-border-base: var(--color-slate-300);
+  --color-border-dark: var(--color-slate-400);
   
-  /* State Colors */
-  --color-success: #28a745;
-  --color-warning: #ffc107;
-  --color-error: var(--color-bauhaus-red);
-  --color-info: var(--color-bauhaus-blue);
+  /* Semantic State Colors */
+  --color-success: #10b981;
+  --color-success-light: #d1fae5;
+  --color-success-dark: #047857;
+  
+  --color-warning: #f59e0b;
+  --color-warning-light: #fef3c7;
+  --color-warning-dark: #d97706;
+  
+  --color-error: #ef4444;
+  --color-error-light: #fee2e2;
+  --color-error-dark: #991b1b;
+  
+  --color-info: var(--color-brand-primary);
+  --color-info-light: #eff6ff;
+  --color-info-dark: #1e40af;
 
   /* ========================================
      TYPOGRAPHY SYSTEM
+     Professional & readable
      ======================================== */
   
   /* Font Families */
-  --font-display: 'Inter', 'Futura', 'Avenir Next', 'Helvetica Neue', sans-serif;
+  --font-display: 'Sora', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   --font-body: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'IBM Plex Mono', 'SF Mono', 'Monaco', 'Courier New', monospace;
-  
-  /* Legacy font sizes removed - now using Fortune 100 typography system in typography.css */
+  --font-mono: 'Fira Code', 'IBM Plex Mono', 'SF Mono', monospace;
   
   /* Font Weights */
   --font-weight-light: 300;
@@ -81,61 +116,59 @@
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
   --font-weight-bold: 700;
-  --font-weight-black: 900;
+  --font-weight-black: 800;
   
-  /* Line Heights */
+  /* Line Heights - Generous for readability */
   --line-height-tight: 1.2;
-  --line-height-snug: 1.35;
+  --line-height-snug: 1.375;
   --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
-  --line-height-loose: 2;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 1.875;
   
   /* Letter Spacing */
-  --letter-spacing-tight: -0.025em;
+  --letter-spacing-tight: -0.02em;
   --letter-spacing-normal: 0;
-  --letter-spacing-wide: 0.05em;
-  --letter-spacing-wider: 0.1em;
+  --letter-spacing-wide: 0.025em;
+  --letter-spacing-wider: 0.05em;
 
   /* ========================================
      SPACING SYSTEM
+     8px base for harmonious layouts
      ======================================== */
   
-  /* Golden Ratio: 1.618 */
-  --ratio-golden: 1.618;
-  
-  /* Base Spacing Unit */
-  --spacing-base: 1rem;        /* 16px */
-  
-  /* Spacing Scale */
+  /* Spacing Scale - Based on 8px */
   --spacing-xs: 0.25rem;       /* 4px */
   --spacing-sm: 0.5rem;        /* 8px */
   --spacing-md: 1rem;          /* 16px */
   --spacing-lg: 1.5rem;        /* 24px */
   --spacing-xl: 2rem;          /* 32px */
-  --spacing-2xl: 3rem;         /* 48px */
-  --spacing-3xl: 4rem;         /* 64px */
-  --spacing-4xl: 6rem;         /* 96px */
-  --spacing-5xl: 8rem;         /* 128px */
+  --spacing-2xl: 2.5rem;       /* 40px */
+  --spacing-3xl: 3rem;         /* 48px */
+  --spacing-4xl: 4rem;         /* 64px */
+  --spacing-5xl: 5rem;         /* 80px */
   
-  /* Golden Ratio Spacing */
-  --spacing-golden-sm: calc(var(--spacing-base) / var(--ratio-golden)); /* ~10px */
-  --spacing-golden-lg: calc(var(--spacing-base) * var(--ratio-golden)); /* ~26px */
+  /* Compound Spacing */
+  --spacing-section: var(--spacing-4xl);
+  --spacing-component: var(--spacing-lg);
+  --spacing-element: var(--spacing-md);
 
   /* ========================================
      LAYOUT SYSTEM
      ======================================== */
   
   /* Container */
-  --container-max-width: 1400px;          /* Increased for better space utilization */
-  --container-max-width-narrow: 900px;    /* For hero/single column content */
-  --container-max-width-content: 1200px;  /* For reading content */
-  --container-padding: var(--spacing-md);
+  --container-max-width: 1280px;
+  --container-max-width-narrow: 896px;
+  --container-max-width-content: 1024px;
+  --container-padding-x: var(--spacing-lg);
+  --container-padding-y: var(--spacing-xl);
   
   /* Grid */
   --grid-columns: 12;
-  --grid-gap: var(--spacing-sm);  /* Reduced from md (16px) to sm (8px) for tighter card layouts */
+  --grid-gap: var(--spacing-md);
   
   /* Breakpoints */
+  --breakpoint-xs: 320px;
   --breakpoint-sm: 640px;
   --breakpoint-md: 768px;
   --breakpoint-lg: 1024px;
@@ -144,58 +177,56 @@
 
   /* ========================================
      GEOMETRIC DESIGN ELEMENTS
+     Subtle, professional rounding
      ======================================== */
   
-  /* Border Radius - BAUHAUS: Sharp geometric edges only */
+  /* Border Radius Scale */
   --radius-none: 0;
-  --radius-sm: 0;              /* Bauhaus: No rounding */
-  --radius-base: 0;            /* Bauhaus: No rounding */
-  --radius-md: 0;              /* Bauhaus: No rounding */
-  --radius-lg: 0;              /* Bauhaus: No rounding */
-  --radius-xl: 0;              /* Bauhaus: No rounding */
-  --radius-2xl: 0;             /* Bauhaus: No rounding */
-  --radius-full: 50%;          /* Only for perfect circles */
+  --radius-sm: 0.25rem;        /* 4px - minimal */
+  --radius-base: 0.375rem;     /* 6px - default */
+  --radius-md: 0.5rem;         /* 8px - standard */
+  --radius-lg: 0.75rem;        /* 12px - prominent */
+  --radius-xl: 1rem;           /* 16px - cards */
+  --radius-2xl: 1.25rem;       /* 20px - large elements */
+  --radius-3xl: 1.5rem;        /* 24px - hero sections */
+  --radius-full: 9999px;       /* Perfect circles */
   
   /* Aspect Ratios */
   --ratio-square: 1;
-  --ratio-video: 1.777;        /* 16:9 */
-  --ratio-photo: 1.5;          /* 3:2 */
-  
-  /* Geometric Sizes */
-  --geometric-sm: 40px;
-  --geometric-md: 80px;
-  --geometric-lg: 120px;
-  --geometric-xl: 200px;
+  --ratio-video: calc(16 / 9);
+  --ratio-photo: calc(3 / 2);
+  --ratio-portrait: calc(3 / 4);
 
   /* ========================================
      SHADOWS & ELEVATION
+     Subtle depth for professionalism
      ======================================== */
   
-  --shadow-xs: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
-  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-  --shadow-xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
-  --shadow-2xl: 0 30px 60px -15px rgba(0, 0, 0, 0.3);
+  /* Elevation system */
+  --shadow-xs: 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-sm: 0 1px 3px 0 rgba(15, 23, 42, 0.1), 0 1px 2px -1px rgba(15, 23, 42, 0.1);
+  --shadow-base: 0 4px 6px -1px rgba(15, 23, 42, 0.1), 0 2px 4px -2px rgba(15, 23, 42, 0.1);
+  --shadow-md: 0 10px 15px -3px rgba(15, 23, 42, 0.1), 0 4px 6px -4px rgba(15, 23, 42, 0.1);
+  --shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.1), 0 8px 10px -6px rgba(15, 23, 42, 0.1);
+  --shadow-xl: 0 25px 50px -12px rgba(15, 23, 42, 0.15);
+  --shadow-2xl: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
   
-  /* Bauhaus Hard Shadows */
-  --shadow-bauhaus-sm: 4px 4px 0 var(--color-bauhaus-black);
-  --shadow-bauhaus-md: 8px 8px 0 var(--color-bauhaus-black);
-  --shadow-bauhaus-lg: 12px 12px 0 var(--color-bauhaus-black);
+  /* Inset shadows for depth */
+  --shadow-inset-sm: inset 0 1px 2px 0 rgba(15, 23, 42, 0.05);
+  --shadow-inset-md: inset 0 2px 4px 0 rgba(15, 23, 42, 0.1);
 
   /* ========================================
      TRANSITIONS & ANIMATIONS
-     MOMA FIX: Bauhaus mechanical easing for machine-age precision
+     Smooth, professional motion
      ======================================== */
   
-  /* Timing Functions - Bauhaus Mechanical Easing */
+  /* Easing Functions */
   --ease-linear: linear;
-  --ease-bauhaus-mechanical: cubic-bezier(0.4, 0.0, 0.2, 1);  /* Primary Bauhaus easing */
-  --ease-in: cubic-bezier(0.4, 0, 1, 1);
-  --ease-out: cubic-bezier(0, 0, 0.2, 1);
-  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);  /* Same as mechanical */
-  --ease-bauhaus: cubic-bezier(0.4, 0.0, 0.2, 1);  /* Mechanical precision */
+  --ease-in-quad: cubic-bezier(0.11, 0, 0.5, 0);
+  --ease-out-quad: cubic-bezier(0.5, 1, 0.89, 1);
+  --ease-in-out: cubic-bezier(0.4, 0, 0.2, 1);
+  --ease-out-cubic: cubic-bezier(0.33, 1, 0.68, 1);
+  --ease-spring: cubic-bezier(0.175, 0.885, 0.32, 1.275);
   
   /* Duration */
   --duration-instant: 0ms;
@@ -203,70 +234,125 @@
   --duration-base: 250ms;
   --duration-slow: 350ms;
   --duration-slower: 500ms;
+  --duration-slowest: 700ms;
   
-  /* Transitions - All using Bauhaus mechanical easing */
-  --transition-fast: var(--duration-fast) var(--ease-bauhaus-mechanical);
-  --transition-base: var(--duration-base) var(--ease-bauhaus-mechanical);
-  --transition-slow: var(--duration-slow) var(--ease-bauhaus-mechanical);
-  --transition-bauhaus: var(--duration-base) var(--ease-bauhaus-mechanical);
+  /* Transition Combinations */
+  --transition-fast: var(--duration-fast) var(--ease-out-quad);
+  --transition-base: var(--duration-base) var(--ease-in-out);
+  --transition-slow: var(--duration-slow) var(--ease-out-cubic);
+  --transition-smooth: var(--duration-base) var(--ease-out-cubic);
+  --transition-spring: var(--duration-base) var(--ease-spring);
 
   /* ========================================
      Z-INDEX SCALE
+     Organized stacking
      ======================================== */
   
-  --z-negative: -1;
+  --z-hide: -1;
   --z-base: 0;
-  --z-dropdown: 1000;
-  --z-sticky: 1100;
-  --z-fixed: 1200;
-  --z-modal-backdrop: 1300;
-  --z-modal: 1400;
-  --z-popover: 1500;
-  --z-tooltip: 1600;
-  --z-toast: 1700;
-  --z-max: 9999;
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-fixed: 300;
+  --z-modal-backdrop: 400;
+  --z-modal: 500;
+  --z-popover: 600;
+  --z-tooltip: 700;
+  --z-notification: 800;
 }
 
 /* ========================================
    DARK THEME OVERRIDES
+   Warm, inviting, professional
    ======================================== */
 
-[data-theme="dark"] {
-  --color-text: var(--color-concrete);
-  --color-text-light: var(--color-aluminum);
-  --color-text-muted: var(--color-steel);
+[data-theme="dark"],
+[data-color-scheme="dark"] {
+  --color-primary: #818cf8;
+  --color-primary-light: #a5b4fc;
+  --color-primary-dark: #6366f1;
   
-  --color-bg: #1a1a1a;
-  --color-bg-alt: var(--color-charcoal);
-  --color-bg-dark: var(--color-bauhaus-black);
+  --color-secondary: #a78bfa;
+  --color-secondary-light: #c4b5fd;
+  --color-secondary-dark: #8b5cf6;
   
-  --color-border: var(--color-graphite);
-  --color-border-light: var(--color-charcoal);
+  --color-accent: #34d399;
   
-  /* Adjust primary colors for better contrast in dark mode */
-  --color-primary-light: #1a7fd8;
-  --color-accent-light: #ffe14d;
+  --color-text-primary: var(--color-slate-50);
+  --color-text-secondary: var(--color-slate-200);
+  --color-text-tertiary: var(--color-slate-300);
+  --color-text-muted: var(--color-slate-400);
+  
+  --color-bg-primary: #111827;        /* Deep, welcoming dark */
+  --color-bg-secondary: #1f2937;      /* Slightly lighter */
+  --color-bg-tertiary: #374151;       /* Even lighter for contrast */
+  --color-bg-inverse: var(--color-white);
+  
+  --color-border-light: #374151;
+  --color-border-base: #4b5563;
+  --color-border-dark: #6b7280;
+  
+  /* Warm accent pops on dark */
+  --color-warmth: #fbbf24;
+  --color-warmth-light: #fcd34d;
+  --color-warmth-dark: #f59e0b;
+  
+  /* Adjusted shadows for dark mode */
+  --shadow-sm: 0 1px 3px 0 rgba(0, 0, 0, 0.3), 0 1px 2px -1px rgba(0, 0, 0, 0.3);
+  --shadow-base: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.4);
+  --shadow-md: 0 10px 15px -3px rgba(0, 0, 0, 0.5), 0 4px 6px -4px rgba(0, 0, 0, 0.5);
+  --shadow-lg: 0 20px 25px -5px rgba(0, 0, 0, 0.6), 0 8px 10px -6px rgba(0, 0, 0, 0.6);
 }
 
 /* ========================================
    RESPONSIVE ADJUSTMENTS
+   Mobile-first, professional scaling
    ======================================== */
 
 @media (max-width: 767px) {
   :root {
-    /* Legacy mobile font overrides removed - handled by Fortune 100 clamp() system */
+    /* Adjust spacing for mobile comfort */
+    --spacing-3xl: 2.5rem;       /* 40px */
+    --spacing-4xl: 3rem;         /* 48px */
+    --spacing-5xl: 4rem;         /* 64px */
     
-    /* Reduce spacing on mobile */
-    --spacing-3xl: 3rem;         /* 48px */
-    --spacing-4xl: 4rem;         /* 64px */
-    --spacing-5xl: 5rem;         /* 80px */
+    /* Comfortable container padding */
+    --container-padding-x: var(--spacing-md);
+    --container-padding-y: var(--spacing-lg);
     
-    /* Smaller container padding */
-    --container-padding: var(--spacing-sm);
-    
-    /* Smaller geometric elements */
-    --geometric-md: 60px;
-    --geometric-lg: 100px;
-    --geometric-xl: 150px;
+    /* Slightly smaller text on mobile */
+    --line-height-tight: 1.25;
+    --line-height-normal: 1.55;
+  }
+}
+
+/* ========================================
+   FOCUS STATES & ACCESSIBILITY
+   Professional & accessible interactions
+   ======================================== */
+
+:root {
+  /* Focus indicators */
+  --focus-outline: 2px solid var(--color-primary);
+  --focus-outline-offset: 2px;
+  
+  /* High contrast mode support */
+  --focus-outline-hc: 3px solid;
+}
+
+@media (prefers-contrast: more) {
+  :root {
+    --color-text-primary: var(--color-slate-950, #030712);
+    --color-border-base: var(--color-slate-500);
+  }
+}
+
+/* Reduced motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-fast: 0ms;
+    --transition-base: 0ms;
+    --transition-slow: 0ms;
+    --transition-smooth: 0ms;
+    --transition-spring: 0ms;
   }
 }
